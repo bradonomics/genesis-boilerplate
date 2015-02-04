@@ -753,8 +753,8 @@ blockquote p {
   }
 }
 
-.full-width-content .content-sidebar-wrap {
-  max-width: 100%;
+.full-width-content .content {
+  width: 100%;
 }
 
 .content {
