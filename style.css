@@ -718,6 +718,16 @@ blockquote p {
 
 /* Structure and Layout
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.site-container {
+  min-height: 100%;
+  position: relative;
+}
+
+/* padding-bottom on the site-inner element needs to be the same size as your footer (or more) */
+.site-inner {
+  padding-bottom: 96px;
+}
+
 .content-sidebar-wrap {
   max-width: 960px;
   margin: 0 auto;
@@ -965,6 +975,7 @@ img.alignright,
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .site-footer {
   bottom: 0;
+  position: absolute;
   display: inline-block;
   width:100%;
   font-size: 16px;
