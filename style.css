@@ -723,7 +723,8 @@ blockquote p {
   position: relative;
 }
 
-/* padding-bottom on the site-inner element needs to be the same size as your footer (or more) */
+/* The padding-bottom on the site-inner element needs to be the same size as your footer.
+ * Unless you have footer widgets, then you'll need to add the padding to .footer-widgets instead. */
 .site-inner {
   padding-bottom: 96px;
 }
