@@ -90,7 +90,7 @@ function geneplate_footer() {
 	<?php
 }
 
-//* Add wrap inside entry-content div in case you full-width images are needed.
+//* Add wrap inside entry-content div in case full-width images are needed.
 add_action( 'genesis_entry_content', 'entry_content_wrap_open', 1 );
 function entry_content_wrap_open() {
     echo '<div class="wrap">';
@@ -98,5 +98,16 @@ function entry_content_wrap_open() {
 
 add_action( 'genesis_entry_content', 'entry_content_wrap_close', 25 );
 function entry_content_wrap_close() {
+    echo '</div>';
+}
+
+//* Add wrap inside sidebar div.
+add_action( 'genesis_before_sidebar_widget_area', 'sidebar_wrap_open' );
+function sidebar_wrap_open() {
+    echo '<div class="wrap">';
+}
+
+add_action( 'genesis_after_sidebar_widget_area', 'sidebar_wrap_close' );
+function sidebar_wrap_close() {
     echo '</div>';
 }
