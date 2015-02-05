@@ -23,6 +23,7 @@
 - Quotes
 - Header
 - Navigation
+- Responsive Menu
 - Grid
 - Structure and Layout
 - Entry Meta
@@ -490,11 +491,17 @@ blockquote p {
 /* Navigation
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .genesis-nav-menu {
+  display: none;
   margin: 0 auto;
   clear: both;
   font-size: 16px;
   line-height: 1;
   text-align: center;
+}
+@media (min-width: 550px) {
+  .genesis-nav-menu {
+    display: block;
+  }
 }
 @media (min-width: 750px) {
   .genesis-nav-menu {
@@ -573,6 +580,29 @@ blockquote p {
 .nav-primary .genesis-nav-menu a:hover,
 .nav-primary .genesis-nav-menu .current-menu-item > a {
   color: #1EAEDB;
+}
+
+
+/* Responsive Menu
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.responsive-menu-icon {
+	cursor: pointer;
+	margin-top: -22px;
+	text-align: center;
+}
+@media (min-width: 550px) {
+  .responsive-menu-icon {
+    display: none;
+  }
+}
+ 
+.responsive-menu-icon::before {
+	color: #000;
+	content: "\f333";
+	display: inline-block;
+	font: normal 20px/1 'dashicons';
+	margin: 0 auto;
+	padding: 10px;
 }
 
 
@@ -770,9 +800,6 @@ blockquote p {
     max-width: 1160px;
   }
 }
-
-
-
 
 .full-width-content .content {
   width: 100%;

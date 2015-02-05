@@ -11,6 +11,8 @@ define( 'CHILD_THEME_VERSION', '0.4' );
 add_action( 'wp_enqueue_scripts', 'geneplate_enqueue_scripts' );
 function geneplate_enqueue_scripts() {
   wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Railway', array(), CHILD_THEME_VERSION );
+  wp_enqueue_script( 'responsive-menu-icon', get_bloginfo( 'stylesheet_directory' ) . '/js/responsive-menu.js', array( 'jquery' ), CHILD_THEME_VERSION );
+  wp_enqueue_style( 'dashicons' );
 }
 
 //* Add HTML5 markup structure
@@ -24,12 +26,6 @@ add_theme_support( 'genesis-structural-wraps', array( 'header', 'footer-widgets'
 
 //* Remove Edit Link
 add_filter( 'edit_post_link', '__return_false' );
-
-//* Remove Comment Reply Script
-add_action( 'wp_enqueue_scripts', 'remove_comment_scripts' );
-function remove_comment_scripts() {
-  wp_dequeue_script( 'comment-reply' );
-}
 
 //* Remove WordPress version
 remove_action( 'wp_head', 'wp_generator' );  
