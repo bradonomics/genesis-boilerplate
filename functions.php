@@ -7,12 +7,13 @@ define( 'CHILD_THEME_NAME', __( 'Genesis Boilerplate', 'geneplate' ) );
 define( 'CHILD_THEME_URL', 'http://github.com/bradonomics/genesis-boilerplate/' );
 define( 'CHILD_THEME_VERSION', '0.4' );
 
-//* Include Google Fonts
+//* Include Google fonts, responsive menu icon, dashicons and remove comment-reply script.
 add_action( 'wp_enqueue_scripts', 'geneplate_enqueue_scripts' );
 function geneplate_enqueue_scripts() {
   wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Railway', array(), CHILD_THEME_VERSION );
   wp_enqueue_script( 'responsive-menu-icon', get_bloginfo( 'stylesheet_directory' ) . '/js/responsive-menu.js', array( 'jquery' ), CHILD_THEME_VERSION );
   wp_enqueue_style( 'dashicons' );
+  wp_deregister_script( 'comment-reply' );
 }
 
 //* Add HTML5 markup structure
