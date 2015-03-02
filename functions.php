@@ -2,17 +2,28 @@
 //* Start the engine
 include_once( get_template_directory() . '/lib/init.php' );
 
+
+/************* REGISTER CHILD THEME *************/
+
 //* Child theme info (you can change it if you like)
 define( 'CHILD_THEME_NAME', __( 'Genesis Boilerplate', 'geneplate' ) );
 define( 'CHILD_THEME_URL', 'http://github.com/bradonomics/genesis-boilerplate/' );
 define( 'CHILD_THEME_VERSION', '0.4' );
 
-//* Include Google fonts, responsive menu icon, dashicons and remove comment-reply script.
+
+/************* THEME SUPPORT *************/
+
+//* Include Google fonts, responsive menu icon, dashicons.
 add_action( 'wp_enqueue_scripts', 'geneplate_enqueue_scripts' );
 function geneplate_enqueue_scripts() {
   wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Railway', array(), CHILD_THEME_VERSION );
   wp_enqueue_script( 'responsive-menu-icon', get_bloginfo( 'stylesheet_directory' ) . '/js/responsive-menu.js', array( 'jquery' ), CHILD_THEME_VERSION );
   wp_enqueue_style( 'dashicons' );
+}
+
+//* Remove comment-reply script.
+add_action( 'wp_enqueue_scripts', 'geneplate_remove_comment_reply' );
+function geneplate_remove_comment_reply() {
   wp_deregister_script( 'comment-reply' );
 }
 
@@ -28,8 +39,8 @@ add_theme_support( 'genesis-structural-wraps', array( 'header', 'footer-widgets'
 //* Remove Edit Link
 add_filter( 'edit_post_link', '__return_false' );
 
-//* Remove WordPress version
-remove_action( 'wp_head', 'wp_generator' );  
+
+/************* UNREGISTER LAYOUTS AND WIDGETS *************/	
 
 //* Unregister layout settings
   //* Remove the comment line to activate the removal of any layouts you don't intend to use.
@@ -39,9 +50,6 @@ remove_action( 'wp_head', 'wp_generator' );
 genesis_unregister_layout( 'content-sidebar-sidebar' );
 genesis_unregister_layout( 'sidebar-sidebar-content' );
 genesis_unregister_layout( 'sidebar-content-sidebar' );
-
-//* Remove RSD Link in Header
-remove_action( 'wp_head', 'rsd_link' );
 
 //* Unregister Sidebars
   //* Remove the comment line to activate the removal of the sidebars if you don't intend to use them.
@@ -56,6 +64,18 @@ function remove_genesis_widgets() {
   unregister_widget( 'Genesis_Featured_Post' );
   unregister_widget( 'Genesis_User_Profile_Widget' );
 }
+
+
+/************* HEAD *************/
+
+//* Remove WordPress version
+remove_action( 'wp_head', 'wp_generator' );  
+
+//* Remove RSD Link in Header
+remove_action( 'wp_head', 'rsd_link' );
+
+
+/************* CONTENT AREA *************/
 
 //* Hooks after-entry widget area to single posts
 add_action( 'genesis_entry_footer', 'geneplate_after_entry' );
@@ -75,8 +95,37 @@ genesis_register_sidebar( array(
 	'description'	=> __( 'This is the after post section.', 'geneplate' ),
 ) );
 
+//* Add wrap inside entry-content div in case full-width images are needed.
+add_action( 'genesis_entry_content', 'entry_content_wrap_open', 1 );
+add_action( 'genesis_entry_content', 'entry_content_wrap_close', 25 );
+function entry_content_wrap_open() {
+    echo '<div class="wrap">';
+}
+function entry_content_wrap_close() {
+    echo '</div>';
+}
+
+
+/************* SIDEBARS AND WIDGETS *************/
+
+//* Add wrap inside sidebar div.
+add_action( 'genesis_before_sidebar_widget_area', 'sidebar_wrap_open' );
+add_action( 'genesis_after_sidebar_widget_area', 'sidebar_wrap_close' );
+function sidebar_wrap_open() {
+    echo '<div class="wrap">';
+}
+function sidebar_wrap_close() {
+    echo '</div>';
+}
+
+
+/************* FOOTER WIDGETS *************/
+
 //* Add 3-Column Footer Widget Area
 add_theme_support( 'genesis-footer-widgets', 3 );
+
+
+/************* FOOTER *************/
 
 //* Change the footer text
 remove_action( 'genesis_footer', 'genesis_do_footer' );
@@ -85,26 +134,4 @@ function geneplate_footer() {
 	?>
 	<p><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a> &copy; <?php echo date('Y') ?> &middot; <a href="http://github.com/bradonomics/genesis-boilerplate/" rel="nofollow">Built using Genesis Boilerplate</a></p>
 	<?php
-}
-
-//* Add wrap inside entry-content div in case full-width images are needed.
-add_action( 'genesis_entry_content', 'entry_content_wrap_open', 1 );
-function entry_content_wrap_open() {
-    echo '<div class="wrap">';
-}
-
-add_action( 'genesis_entry_content', 'entry_content_wrap_close', 25 );
-function entry_content_wrap_close() {
-    echo '</div>';
-}
-
-//* Add wrap inside sidebar div.
-add_action( 'genesis_before_sidebar_widget_area', 'sidebar_wrap_open' );
-function sidebar_wrap_open() {
-    echo '<div class="wrap">';
-}
-
-add_action( 'genesis_after_sidebar_widget_area', 'sidebar_wrap_close' );
-function sidebar_wrap_close() {
-    echo '</div>';
 }
