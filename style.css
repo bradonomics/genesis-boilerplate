@@ -959,10 +959,6 @@ img.alignright,
   }
 }
 
-.sidebar-content {
-  float: left;
-}
-
 .sidebar li {
   border-bottom: 1px dotted #ddd;
   margin-bottom: 1rem;
