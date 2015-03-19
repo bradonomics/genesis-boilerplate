@@ -54,7 +54,8 @@ genesis_unregister_layout( 'sidebar-content-sidebar' );
 //* Unregister Sidebars
   //* Remove the comment line to activate the removal of the sidebars if you don't intend to use them.
 // unregister_sidebar( 'sidebar' );
-// unregister_sidebar( 'sidebar-alt' );
+unregister_sidebar( 'sidebar-alt' );
+unregister_sidebar( 'header-right' );
 
 //* Remove unused Genesis Widgets
   //* Add a comment to block or remove the line to deactivate the removal of any widgets you'd like to use.
