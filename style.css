@@ -434,6 +434,22 @@ blockquote p {
   }
 }
 
+.site-header .widget-area {
+  width: 100%;
+}
+@media (min-width: 750px) {
+	.site-header .widget-area {
+    float: right;
+    text-align: right;
+    max-width: 620px;
+	}
+}
+@media (min-width: 1200px) {
+	.site-header .widget-area {
+    max-width: 800px;
+  }
+}
+
 .title-area {
   float: left;
   padding: 10px 0;
@@ -442,13 +458,13 @@ blockquote p {
 }
 @media (min-width: 750px) {
   .title-area {
-    width: 300px;
+    max-width: 300px;
     text-align: left;
   }
 }
 @media (min-width: 1200px) {
   .title-area {
-    width: 360px;
+    max-width: 360px;
   }
 }
 
@@ -777,6 +793,10 @@ blockquote p {
   .content-sidebar-wrap {
     max-width: 1160px;
   }
+}
+
+.full-width-content .content-sidebar-wrap {
+  max-width: 100%;
 }
 
 /* wrap used in entry-header and entry-footer.
@@ -1110,15 +1130,6 @@ img.alignright,
   border: none;
   margin: 0 0 0 3rem;
   padding: 0;
-}
-
-.widget_calendar table {
-  width: 100%;
-}
-
-.widget_calendar td,
-.widget_calendar th {
-  text-align: center;
 }
 
 
