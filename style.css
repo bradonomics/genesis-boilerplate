@@ -4,7 +4,7 @@
   Description: Boilerplate code for Genesis child themes built on the Skeleton framework.
   Author: Brad West
   Author URI: http://bradonomics.com/
-  Version: 0.5
+  Version: 0.6.0
 
   Template: genesis
 */
@@ -395,14 +395,14 @@ blockquote {
 }
 
 blockquote::before {
-	position: relative;
-	left: -20px;
-	top: -10px;
+  position: relative;
+  left: -20px;
+  top: -10px;
   content: "“";
-	display: block;
-	font-size: 40px;
-	font-size: 4rem;
-	height: 0;
+  display: block;
+  font-size: 40px;
+  font-size: 4rem;
+  height: 0;
 }
 
 blockquote p {
@@ -416,7 +416,7 @@ blockquote p:last-child {
 blockquote,
 blockquote::before,
 blockquote p {
-	color: #555;
+  color: #555;
 }
 
 /* Header
@@ -438,14 +438,14 @@ blockquote p {
   width: 100%;
 }
 @media (min-width: 750px) {
-	.site-header .widget-area {
+  .site-header .widget-area {
     float: right;
     text-align: right;
     max-width: 620px;
-	}
+  }
 }
 @media (min-width: 1200px) {
-	.site-header .widget-area {
+  .site-header .widget-area {
     max-width: 800px;
   }
 }
@@ -537,9 +537,34 @@ blockquote p {
 }
 
 .genesis-nav-menu .menu-item {
-  display: inline-block;
+  display: block;
   margin-bottom: 0;
   text-align: left;
+}
+@media (min-width: 550px) {
+  .genesis-nav-menu .menu-item {
+    display: inline-block;
+  }
+}
+
+.genesis-nav-menu .menu-item:hover {
+  position: static;
+}
+@media (min-width: 550px) {
+  .genesis-nav-menu .menu-item:hover {
+    position: relative;
+  }
+}
+
+.genesis-nav-menu .menu-item:hover > .sub-menu {
+  left: auto;
+  opacity: 1;
+}
+@media (min-width: 550px) {
+  .genesis-nav-menu .menu-item:hover > .sub-menu {
+    margin-left: -20px;
+    margin-top: -12px;
+  }
 }
 
 .genesis-nav-menu a {
@@ -552,6 +577,12 @@ blockquote p {
     padding: 20px 16px;
   }
 }
+@media (min-width: 1000px) {
+  .genesis-nav-menu a {
+    padding-bottom: 29px;
+    padding-top: 29px;
+  }
+}
 
 .genesis-nav-menu a:hover,
 .genesis-nav-menu .current-menu-item > a {
@@ -562,39 +593,52 @@ blockquote p {
   position: static;
 }
 
-.genesis-nav-menu > .first > a {
-  padding-left: 0;
+.genesis-nav-menu .sub-menu {
+  left: auto;
+  opacity: 1;
+  position: relative;
+  -webkit-transition: opacity .4s ease-in-out;
+     -moz-transition: opacity .4s ease-in-out;
+      -ms-transition: opacity .4s ease-in-out;
+       -o-transition: opacity .4s ease-in-out;
+          transition: opacity .4s ease-in-out;
+  z-index: 99;
 }
-@media (min-width: 750px) {
-  .genesis-nav-menu > .first > a {
-    padding: 20px 16px;
+@media (min-width: 550px) {
+  .genesis-nav-menu .sub-menu {
+    background-color: #fff;
+    left: -9999px;
+    opacity: 0;
+    position: absolute;
+    text-align: center;
+    width: 200px;
   }
 }
 
-.genesis-nav-menu > .last > a {
-  padding-right: 0;
-}
-@media (min-width: 750px) {
-  .genesis-nav-menu > .last > a {
-    padding: 20px 16px;
+@media (min-width: 550px) {
+  .genesis-nav-menu .menu-item:hover > .sub-menu > .menu-item:hover > .sub-menu {
+    left: 140px;
+    margin-left: 0px;
+    margin-top: -56px;
+    opacity: 1;
   }
 }
 
-.genesis-nav-menu > .right {
-  color: #fff;
-  float: right;
-  list-style-type: none;
-  padding: 30px 0;
+.genesis-nav-menu .sub-menu a {
+  color: #000;
+  letter-spacing: 0;
+  position: relative;
+  text-transform: none;
+}
+@media (min-width: 550px) {
+  .genesis-nav-menu .sub-menu a {
+    padding: 20px;
+    text-align: center;
+    width: 100px;
+  }
 }
 
-.genesis-nav-menu > .right > a {
-  display: inline;
-  padding: 0;
-}
-
-
-.nav-primary .genesis-nav-menu a:hover,
-.nav-primary .genesis-nav-menu .current-menu-item > a {
+.genesis-nav-menu .sub-menu a:hover {
   color: #1EAEDB;
 }
 
@@ -602,9 +646,10 @@ blockquote p {
 /* Responsive Menu
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .responsive-menu-icon {
-	cursor: pointer;
-	margin-top: -22px;
-	text-align: center;
+  cursor: pointer;
+  margin-top: -22px;
+  text-align: center;
+  display: block;
 }
 @media (min-width: 550px) {
   .responsive-menu-icon {
@@ -613,12 +658,49 @@ blockquote p {
 }
 
 .responsive-menu-icon::before {
-	color: #000;
-	content: "\f333";
-	display: inline-block;
-	font: normal 20px/1 'dashicons';
-	margin: 0 auto;
-	padding: 10px;
+  color: #000;
+  content: "\f333";
+  display: inline-block;
+  font: normal 20px/1 'dashicons';
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.responsive-menu,
+.responsive-menu > .menu-item > .sub-menu {
+  display: none;
+}
+@media (min-width: 550px) {
+  .responsive-menu,
+  .responsive-menu > .menu-item > .sub-menu {
+    display: block;
+  }
+}
+
+.responsive-menu > .menu-item-has-children:before {
+  clear: both;
+  content: "\f347";
+  float: right;
+  font: normal 14px/1 'dashicons';
+  height: 14px;
+  padding: 30px 20px 0;
+  right: 0;
+  text-align: right;
+  z-index: 9999;
+}
+@media (min-width: 550px) {
+  .responsive-menu > .menu-item-has-children:before {
+    display: none;
+  }
+}
+
+.responsive-menu .menu-open.menu-item-has-children:before {
+  content: "\f343";
+}
+@media (min-width: 550px) {
+  .responsive-menu .menu-open.menu-item-has-children:before {
+    display: none;
+  }
 }
 
 
@@ -799,7 +881,7 @@ blockquote p {
   max-width: 100%;
 }
 
-/* wrap used in entry-header and entry-footer.
+/* wrap used in entry-header, entry-footer and sidebar.
  * Also used in entry-content on full-width pages. */
 .wrap {
   margin: 0 auto;
@@ -860,7 +942,6 @@ blockquote p {
     max-width: 760px;
   }
 }
-
 
 .entry-title a {
   text-decoration: none;
