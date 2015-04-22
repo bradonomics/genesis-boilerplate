@@ -881,8 +881,7 @@ blockquote p {
   max-width: 100%;
 }
 
-/* wrap used in entry-header, entry-footer and sidebar.
- * Also used in entry-content on full-width pages. */
+/* wrap used in site-header, entry-header, entry-content, entry-footer, site-footer and sidebar. */
 .wrap {
   margin: 0 auto;
   padding: 0 20px;
