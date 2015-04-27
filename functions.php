@@ -29,10 +29,16 @@ add_theme_support( 'html5' );
 add_theme_support( 'genesis-responsive-viewport' );
 
 //* Add Structural Wraps
-add_theme_support( 'genesis-structural-wraps', array( 'header', 'footer-widgets' ) );
+add_theme_support( 'genesis-structural-wraps', array( 'header', 'footer-widgets', 'footer' ) );
 
 //* Remove Edit Link
 add_filter( 'edit_post_link', '__return_false' );
+
+//* Remove Emoji
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+remove_action( 'wp_print_styles', 'print_emoji_styles' );
+remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
 
 /************* UNREGISTER LAYOUTS AND WIDGETS *************/
