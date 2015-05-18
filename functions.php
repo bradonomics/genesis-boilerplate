@@ -8,7 +8,7 @@ include_once( get_template_directory() . '/lib/init.php' );
 //* Child theme info (you can change it if you like)
 define( 'CHILD_THEME_NAME', __( 'Genesis Boilerplate', 'geneplate' ) );
 define( 'CHILD_THEME_URL', 'http://github.com/bradonomics/genesis-boilerplate/' );
-define( 'CHILD_THEME_VERSION', '0.6.0' );
+define( 'CHILD_THEME_VERSION', '0.7.0' );
 
 
 /************* THEME SUPPORT *************/
