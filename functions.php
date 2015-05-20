@@ -127,7 +127,7 @@ function sidebar_wrap_close() {
 
 /************* FOOTER WIDGETS *************/
 
-//* Add 3-Column Footer Widget Area
+//* Add 2, 3 or 4-Column Footer Widget Area
 // add_theme_support( 'genesis-footer-widgets', 3 );
 
 
