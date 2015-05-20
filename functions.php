@@ -22,6 +22,10 @@ function geneplate_enqueue_scripts() {
   wp_deregister_script( 'comment-reply' );
 }
 
+//* Move child theme stylesheet to the end of the line so it takes precedence over plugin stylesheets.
+remove_action( 'genesis_meta', 'genesis_load_stylesheet' );
+add_action( 'wp_enqueue_scripts', 'genesis_enqueue_main_stylesheet', 15 );
+
 //* Add HTML5 markup structure
 add_theme_support( 'html5' );
 
