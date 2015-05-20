@@ -28,10 +28,11 @@
 - Structure and Layout
 - Entry Meta
 - Images
+- Widgets
 - Sidebar
 - Pagination
+- Footer Widgets
 - Footer
-- Widgets
 - Media Queries
 */
 
@@ -77,6 +78,11 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
   display: table;
 }
 
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+     -moz-box-sizing: inherit;
+          box-sizing: inherit;
+}
 
 /* Base
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -84,6 +90,9 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
 html {
   font-size: 62.5%;
   height: 100%;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -708,166 +717,37 @@ blockquote p {
 
 /* Grid
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.container {
-  position: relative;
-  width: 100%;
-  margin: 0 auto;
-  box-sizing: border-box;
-}
-@media (min-width: 400px) {
-  .container {
-    width: 85%;
-    padding: 0; }
-}
-@media (min-width: 550px) {
-  .container {
-    width: 80%; }
-}
-
-.row {
-  max-width: 1140px;
-  margin: 0 auto;
-}
-
 .column,
 .columns {
-  width: 100%;
+  position: relative;
   float: left;
-  box-sizing: border-box;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+@media (min-width: 550px) {
+  .one-half,
+  .one-forth {
+    width: 50%;
+  }
 }
 @media (min-width: 750px) {
-
-  .column,
-  .columns {
-    margin-left: 4%;
+  .one-third {
+    width: 33.33333333%;
   }
-
-  .column:first-child,
-  .columns:first-child {
-    margin-left: 0;
-  }
-
-  .one.column,
-  .one.columns {
-    width: 4.66666666667%;
-  }
-  .two.columns {
-    width: 13.3333333333%;
-  }
-  .three.columns {
-    width: 22%;
-  }
-  .four.columns {
-    width: 30.6666666667%;
-  }
-  .five.columns {
-    width: 39.3333333333%;
-  }
-  .six.columns {
-    width: 48%;
-  }
-  .seven.columns {
-    width: 56.6666666667%;
-  }
-  .eight.columns {
-    width: 65.3333333333%;
-  }
-  .nine.columns {
-    width: 74.0%;
-  }
-  .ten.columns {
-    width: 82.6666666667%;
-  }
-  .eleven.columns {
-    width: 91.3333333333%;
-  }
-  .twelve.columns {
-    width: 100%; margin-left: 0;
-  }
-
-  .one-third.column {
-    width: 30.6666666667%;
-  }
-  .two-thirds.column {
-    width: 65.3333333333%;
-  }
-
-  .one-half.column {
-    width: 48%;
-  }
-
-  .offset-by-one.column,
-  .offset-by-one.columns {
-    margin-left: 8.66666666667%;
-  }
-  .offset-by-two.column,
-  .offset-by-two.columns {
-    margin-left: 17.3333333333%;
-  }
-  .offset-by-three.column,
-  .offset-by-three.columns {
-    margin-left: 26%;
-  }
-  .offset-by-four.column,
-  .offset-by-four.columns {
-    margin-left: 34.6666666667%;
-  }
-  .offset-by-five.column,
-  .offset-by-five.columns {
-    margin-left: 43.3333333333%;
-  }
-  .offset-by-six.column,
-  .offset-by-six.columns {
-    margin-left: 52%;
-  }
-  .offset-by-seven.column,
-  .offset-by-seven.columns {
-    margin-left: 60.6666666667%;
-  }
-  .offset-by-eight.column,
-  .offset-by-eight.columns {
-    margin-left: 69.3333333333%;
-  }
-  .offset-by-nine.column,
-  .offset-by-nine.columns {
-    margin-left: 78.0%;
-  }
-  .offset-by-ten.column,
-  .offset-by-ten.columns {
-    margin-left: 86.6666666667%;
-  }
-  .offset-by-eleven.column,
-  .offset-by-eleven.columns {
-    margin-left: 95.3333333333%;
-  }
-
-  .offset-by-one-third.column,
-  .offset-by-one-third.columns {
-    margin-left: 34.6666666667%;
-  }
-  .offset-by-two-thirds.column,
-  .offset-by-two-thirds.columns {
-    margin-left: 69.3333333333%;
-  }
-
-  .offset-by-one-half.column,
-  .offset-by-one-half.columns {
-    margin-left: 52%;
-  }
-
 }
+@media (min-width: 1000px) {
+  .one-forth {
+    width: 25%;
+  }
+}
+
 
 /* Structure and Layout
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .site-container {
   min-height: 100%;
   position: relative;
-}
-
-/* The padding-bottom on the site-inner element needs to be the same size as your footer.
- * Unless you have footer widgets, then you'll need to add the padding to .footer-widgets instead. */
-.site-inner {
-  padding-bottom: 96px;
 }
 
 .content-sidebar-wrap {
@@ -942,6 +822,21 @@ blockquote p {
   .entry-footer,
   .archive-title  {
     max-width: 760px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .full-width-content .entry-header,
+  .full-width-content .entry-footer,
+  .full-width-content .archive-title  {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .full-width-content .entry-header,
+  .full-width-content .entry-footer,
+  .full-width-content .archive-title  {
+    max-width: 1160px;
   }
 }
 
@@ -1043,6 +938,26 @@ img.alignright,
 }
 
 
+/* Widgets
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.widget {
+  word-wrap: break-word;
+}
+
+.widget ol > li {
+  list-style-position: inside;
+  list-style-type: decimal;
+  padding-left: 20px;
+  text-indent: -20px;
+}
+
+.widget li li {
+  border: none;
+  margin: 0 0 0 3rem;
+  padding: 0;
+}
+
+
 /* Sidebar
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .sidebar {
@@ -1110,30 +1025,11 @@ img.alignright,
 }
 
 
-/* Footer
+/* Footer Widgets
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.site-footer {
-  bottom: 0;
-  position: absolute;
-  display: inline-block;
-  width:100%;
-  font-size: 16px;
-  line-height: 1;
-  padding: 40px 0;
-  text-align: center;
-}
-
-.site-footer p {
-  margin-bottom: 0;
-}
-
 .footer-widgets {
   clear: both;
   padding-top: 40px;
-}
-
-.footer-widgets input {
-  border: 1px solid #333;
 }
 
 .footer-widgets .widget {
@@ -1146,68 +1042,72 @@ img.alignright,
 
 .footer-widgets-1,
 .footer-widgets-2,
-.footer-widgets-3 {
-  width: 100%;
+.footer-widgets-3,
+.footer-widgets-4 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+/* Two Footer Widgets --- Uncomment to Use */
+/*
+@media (min-width: 550px) {
+  .footer-widgets-1,
+  .footer-widgets-2 {
+    float: left;
+    width: 50%;
+  }
+}
+*/
+
+/* Three Footer Widgets --- Uncomment to Use */
+/*
+@media (min-width: 750px) {
+  .footer-widgets-1,
+  .footer-widgets-2,
+  .footer-widgets-3 {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+*/
+
+/* Four Footer Widgets --- Uncomment to Use */
+/*
+@media (min-width: 550px) {
+  .footer-widgets-1,
+  .footer-widgets-2,
+  .footer-widgets-3,
+  .footer-widgets-4  {
+    float: left;
+    width: 50%;
+  }
 }
 @media (min-width: 1000px) {
   .footer-widgets-1,
   .footer-widgets-2,
-  .footer-widgets-3 {
-    width: 300px;
+  .footer-widgets-3,
+  .footer-widgets-4 {
+    width: 25%;
   }
 }
-@media (min-width: 1200px) {
-  .footer-widgets-1,
-  .footer-widgets-2,
-  .footer-widgets-3 {
-    width: 340px;
-  }
-}
-
-.footer-widgets-1,
-.footer-widgets-2 {
-  margin-right: 0;
-}
-@media (min-width: 750px) {
-  .footer-widgets-1,
-  .footer-widgets-2 {
-    margin-right: 3rem;
-  }
-}
-@media (min-width: 1200px) {
-  .footer-widgets-1,
-  .footer-widgets-2 {
-    margin-right: 6rem;
-  }
-}
-
-.footer-widgets-1,
-.footer-widgets-2 {
-  float: left;
-}
-
-.footer-widgets-3 {
-  float: right;
-}
+*/
 
 
-/* Widgets
+/* Footer
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.widget {
-  word-wrap: break-word;
+.site-footer {
+  display: inline-block;
+  width:100%;
+  font-size: 16px;
+  line-height: 1;
+  padding: 40px 0;
+  text-align: center;
 }
 
-.widget ol > li {
-  list-style-position: inside;
-  list-style-type: decimal;
-  padding-left: 20px;
-  text-indent: -20px;
-}
-
-.widget li li {
-  border: none;
-  margin: 0 0 0 3rem;
-  padding: 0;
+.site-footer p {
+  margin-bottom: 0;
 }
 
 
@@ -1218,15 +1118,15 @@ img.alignright,
 @media (min-width: 400px) {
 }
 
-/* Larger than phablet */
+/* Larger than phablet (point when 2-column grid becomes active) */
 @media (min-width: 550px) {
 }
 
-/* Larger than tablet (also point when grid becomes active) */
+/* Larger than tablet (point when 3-column grid becomes active) */
 @media (min-width: 750px) {
 }
 
-/* Larger than desktop */
+/* Larger than desktop (point when 4-column grid becomes active) */
 @media (min-width: 1000px) {
 }
 
