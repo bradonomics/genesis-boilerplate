@@ -430,6 +430,65 @@ blockquote p {
   color: #555;
 }
 
+
+/* Structure and Layout
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.site-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+}
+
+.site-inner {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 auto;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+}
+
+.content-sidebar-wrap {
+  max-width: 960px;
+  margin: 0 auto;
+}
+@media (min-width: 1200px) {
+  .content-sidebar-wrap {
+    max-width: 1160px;
+  }
+}
+
+.full-width-content .content-sidebar-wrap {
+  max-width: 100%;
+}
+
+/* wrap used in site-header, entry-header, entry-content, entry-footer, site-footer and sidebar. */
+.wrap {
+  margin: 0 auto;
+  padding: 0 20px;
+}
+@media (min-width: 750px) {
+  .wrap {
+    max-width: 760px;
+  }
+}
+@media (min-width: 1000px) {
+  .wrap {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .wrap {
+    max-width: 1160px;
+  }
+}
+
+
 /* Header
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .site-header {
@@ -717,14 +776,14 @@ blockquote p {
 
 /* Grid
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.column,
-.columns {
+.column {
   position: relative;
   float: left;
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
 }
+
 @media (min-width: 550px) {
   .one-half,
   .one-forth {
@@ -743,48 +802,8 @@ blockquote p {
 }
 
 
-/* Structure and Layout
+/* Entry Content
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.site-container {
-  min-height: 100%;
-  position: relative;
-}
-
-.content-sidebar-wrap {
-  max-width: 960px;
-  margin: 0 auto;
-}
-@media (min-width: 1200px) {
-  .content-sidebar-wrap {
-    max-width: 1160px;
-  }
-}
-
-.full-width-content .content-sidebar-wrap {
-  max-width: 100%;
-}
-
-/* wrap used in site-header, entry-header, entry-content, entry-footer, site-footer and sidebar. */
-.wrap {
-  margin: 0 auto;
-  padding: 0 20px;
-}
-@media (min-width: 750px) {
-  .wrap {
-    max-width: 760px;
-  }
-}
-@media (min-width: 1000px) {
-  .wrap {
-    max-width: 960px;
-  }
-}
-@media (min-width: 1200px) {
-  .wrap {
-    max-width: 1160px;
-  }
-}
-
 .full-width-content .content {
   width: 100%;
 }
@@ -808,9 +827,6 @@ blockquote p {
   float: left;
 }
 
-
-/* Entry Content
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
 .entry-header,
 .entry-footer,
 .archive-title {
@@ -1098,8 +1114,10 @@ img.alignright,
 /* Footer
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .site-footer {
-  display: inline-block;
-  width:100%;
+  -webkit-box-flex: 0;
+  -webkit-flex: none;
+      -ms-flex: none;
+          flex: none;
   font-size: 16px;
   line-height: 1;
   padding: 40px 0;
