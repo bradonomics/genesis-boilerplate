@@ -717,7 +717,7 @@ blockquote p {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .responsive-menu-icon {
   cursor: pointer;
-  margin-top: -22px;
+  -webkit-margin-top-collapse: discard;
   text-align: center;
   display: block;
 }
@@ -782,6 +782,12 @@ blockquote p {
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
+}
+
+.one-half,
+.one-third,
+.one-forth {
+  width: 100%;
 }
 
 @media (min-width: 550px) {
