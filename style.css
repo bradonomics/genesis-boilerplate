@@ -447,10 +447,10 @@ blockquote p {
 }
 
 .site-inner {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1 0 auto;
-      -ms-flex: 1 0 auto;
-          flex: 1 0 auto;
+  -webkit-box-flex: 3;
+  -webkit-flex: 3 0 auto;
+      -ms-flex: 3 0 auto;
+          flex: 3 0 auto;
 }
 
 .content-sidebar-wrap {
@@ -493,6 +493,10 @@ blockquote p {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .site-header {
   background-color: #fff;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 auto;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
 }
 
 .site-header .wrap {
@@ -576,6 +580,13 @@ blockquote p {
 
 /* Navigation
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.nav-primary {
+  -webkit-box-flex: 2;
+  -webkit-flex: 2 0 auto;
+      -ms-flex: 2 0 auto;
+          flex: 2 0 auto;
+}
+
 .genesis-nav-menu {
   display: none;
   margin: 0 auto;
