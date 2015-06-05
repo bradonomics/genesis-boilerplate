@@ -10,7 +10,7 @@
 */
 
 /* Table of contents
-––––––––––––––––––––––––––––––––––––––––––––––––––
+--------------------------------------------------
 - Normalize
 - Float Clearing
 - Base
@@ -28,6 +28,7 @@
 - Structure and Layout
 - Entry Meta
 - Images
+- Iframe Embeds
 - Widgets
 - Sidebar
 - Pagination
@@ -37,12 +38,12 @@
 */
 
 /* normalize.css v3.0.3
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+-------------------------------------------------- */
 html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto}input[type="search"]{-webkit-appearance:textfield;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:bold}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}
 
 
 /* Float Clearing
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+-------------------------------------------------- */
 .author-box:before,
 .clearfix:before,
 .entry:before,
@@ -85,7 +86,7 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
 }
 
 /* Base
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+-------------------------------------------------- */
 /* NOTE: html is set to 62.5% so all the REM measurements throughout Skeleton are based on 10px sizing. */
 html {
   font-size: 62.5%;
@@ -117,7 +118,7 @@ body {
 
 
 /* Headings
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+-------------------------------------------------- */
 h1,
 h2,
 h3,
@@ -130,7 +131,7 @@ h6 {
 }
 
 h1 {
-  font-size: 4.0rem;
+  font-size: 4rem;
   line-height: 1.2;
 }
 
@@ -140,7 +141,7 @@ h2 {
 }
 
 h3 {
-  font-size: 3.0rem;
+  font-size: 3rem;
   line-height: 1.3;
 }
 
@@ -160,10 +161,10 @@ h6 {
 }
 
 @media (min-width: 550px) {
-  h1 { font-size: 5.0rem; }
+  h1 { font-size: 5rem; }
   h2 { font-size: 4.2rem; }
   h3 { font-size: 3.6rem; }
-  h4 { font-size: 3.0rem; }
+  h4 { font-size: 3rem; }
   h5 { font-size: 2.4rem; }
   h6 { font-size: 1.5rem; }
 }
@@ -176,7 +177,7 @@ p {
 
 
 /* Links
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+-------------------------------------------------- */
 a {
   color: #1EAEDB;
   text-decoration: none;
@@ -188,7 +189,7 @@ a:hover {
 
 
 /* Buttons
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+-------------------------------------------------- */
 .button,
 button,
 input[type="submit"],
@@ -241,7 +242,7 @@ input[type="button"]:focus {
 
 
 /* Forms
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+-------------------------------------------------- */
 form {
   margin-bottom: 2.5rem;
 }
@@ -329,7 +330,7 @@ label > .label-body {
 
 
 /* Lists
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+-------------------------------------------------- */
 ul {
   list-style: disc inside;
   -webkit-padding-start: 0;
@@ -364,7 +365,7 @@ li {
 
 
 /* Tables
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+-------------------------------------------------- */
 table {
   margin-right: 2.5rem;
   margin-left: 2.5rem;
@@ -390,7 +391,7 @@ td:last-child {
 
 
 /* Quotes
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+-------------------------------------------------- */
 blockquote {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -432,7 +433,7 @@ blockquote p {
 
 
 /* Structure and Layout
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+-------------------------------------------------- */
 .site-container {
   display: -webkit-box;
   display: -webkit-flex;
@@ -490,7 +491,7 @@ blockquote p {
 
 
 /* Header
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+-------------------------------------------------- */
 .site-header {
   background-color: #fff;
   -webkit-box-flex: 1;
@@ -579,7 +580,7 @@ blockquote p {
 
 
 /* Navigation
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+-------------------------------------------------- */
 .nav-primary {
   -webkit-box-flex: 2;
   -webkit-flex: 2 0 auto;
@@ -725,7 +726,7 @@ blockquote p {
 
 
 /* Responsive Menu
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+-------------------------------------------------- */
 .responsive-menu-icon {
   cursor: pointer;
   -webkit-margin-top-collapse: discard;
@@ -786,7 +787,7 @@ blockquote p {
 
 
 /* Grid
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+-------------------------------------------------- */
 .column {
   position: relative;
   float: left;
@@ -820,7 +821,7 @@ blockquote p {
 
 
 /* Entry Content
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+-------------------------------------------------- */
 .full-width-content .content {
   width: 100%;
 }
@@ -847,14 +848,15 @@ blockquote p {
 .entry-header,
 .entry-footer,
 .archive-title {
+  max-width: 760px;
   margin: 0 auto;
   padding: 0 20px;
 }
-@media (min-width: 750px) {
+@media (min-width: 1000px) {
   .entry-header,
   .entry-footer,
   .archive-title  {
-    max-width: 760px;
+    max-width: none;
   }
 }
 
@@ -884,7 +886,7 @@ blockquote p {
 
 
 /* Entry Meta
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+-------------------------------------------------- */
 p.entry-meta {
   font-size: 16px;
   margin-bottom: 0;
@@ -906,7 +908,7 @@ p.entry-meta {
 
 
 /* Images
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+-------------------------------------------------- */
 img {
   max-width: 100%;
   height: auto;
@@ -971,8 +973,30 @@ img.alignright,
 }
 
 
+/* iFrame Embeds
+-------------------------------------------------- */
+.iframe-embed {
+  position: relative;
+  margin-bottom: 1rem;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+  max-width: 100%;
+  height: auto
+}
+
+.iframe-embed iframe,
+.iframe-embed object,
+.iframe-embed embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%
+}
+
+
 /* Widgets
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+-------------------------------------------------- */
 .widget {
   word-wrap: break-word;
 }
@@ -992,7 +1016,7 @@ img.alignright,
 
 
 /* Sidebar
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+-------------------------------------------------- */
 .sidebar {
   float: right;
   width: 100%;
@@ -1028,7 +1052,7 @@ img.alignright,
 
 
 /* Pagination
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+-------------------------------------------------- */
 .pagination {
   clear: both;
   margin: 40px 0;
@@ -1059,7 +1083,7 @@ img.alignright,
 
 
 /* Footer Widgets
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+-------------------------------------------------- */
 .footer-widgets {
   clear: both;
   padding-top: 40px;
@@ -1129,7 +1153,7 @@ img.alignright,
 
 
 /* Footer
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+-------------------------------------------------- */
 .site-footer {
   -webkit-box-flex: 0;
   -webkit-flex: none;
@@ -1147,8 +1171,7 @@ img.alignright,
 
 
 /* Media Queries
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
+-------------------------------------------------- */
 /* Larger than mobile */
 @media (min-width: 400px) {
 }
