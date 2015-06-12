@@ -83,6 +83,32 @@ remove_action( 'wp_head', 'rsd_link' );
 
 /************* CONTENT AREA *************/
 
+//* Add wrap inside entry-content div in case full-width images are needed.
+add_action( 'genesis_entry_content', 'entry_content_wrap_open', 1 );
+add_action( 'genesis_entry_content', 'entry_content_wrap_close', 25 );
+function entry_content_wrap_open() {
+    echo '<div class="wrap">';
+}
+function entry_content_wrap_close() {
+    echo '</div>';
+}
+
+//* Add a 'iframe-embed' div around videos and such for responsive designs
+add_filter('the_content', 'iframe_responsive_wrapper');
+function iframe_responsive_wrapper($content) {
+
+  $pattern = '~<iframe.*</iframe>|<embed.*</embed>~';
+  preg_match_all($pattern, $content, $matches);
+
+  foreach ($matches[0] as $match) {
+    $wrappedframe = '<div class="iframe-embed">' . $match . '</div>';
+    $content = str_replace($match, $wrappedframe, $content);
+  }
+
+  return $content;
+
+}
+
 //* Hooks after-entry widget area to single posts
 add_action( 'genesis_entry_footer', 'geneplate_after_entry' );
 function geneplate_after_entry() {
@@ -100,16 +126,6 @@ genesis_register_sidebar( array(
 	'name'			=> __( 'After Entry', 'geneplate' ),
 	'description'	=> __( 'This is the after post section.', 'geneplate' ),
 ) );
-
-//* Add wrap inside entry-content div in case full-width images are needed.
-add_action( 'genesis_entry_content', 'entry_content_wrap_open', 1 );
-add_action( 'genesis_entry_content', 'entry_content_wrap_close', 25 );
-function entry_content_wrap_open() {
-    echo '<div class="wrap">';
-}
-function entry_content_wrap_close() {
-    echo '</div>';
-}
 
 
 /************* SIDEBARS AND WIDGETS *************/
