@@ -1075,6 +1075,10 @@ img.alignright,
 /* Footer Widgets
 -------------------------------------------------- */
 .footer-widgets {
+  -webkit-box-flex: 4;
+  -webkit-flex: 4 0 auto;
+      -ms-flex: 4 0 auto;
+          flex: 4 0 auto;
   clear: both;
   padding-top: 40px;
 }
