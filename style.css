@@ -379,16 +379,6 @@ td {
   border-bottom: 1px solid #E1E1E1;
 }
 
-th:first-child,
-td:first-child {
-  padding-left: 0;
-}
-
-th:last-child,
-td:last-child {
-  padding-right: 0;
-}
-
 
 /* Quotes
 -------------------------------------------------- */
@@ -505,7 +495,7 @@ blockquote p {
 }
 @media (min-width: 1000px) {
   .site-header .wrap {
-    padding: 40px 0;
+    padding: 40px 20px;
   }
 }
 
