@@ -109,6 +109,13 @@ function iframe_responsive_wrapper($content) {
 
 }
 
+//* Register after-entry widget area
+genesis_register_sidebar( array(
+	'id'			=> 'after-entry',
+	'name'			=> __( 'After Entry', 'geneplate' ),
+	'description'	=> __( 'This is the after post section.', 'geneplate' ),
+) );
+
 //* Hooks after-entry widget area to single posts
 add_action( 'genesis_entry_footer', 'geneplate_after_entry' );
 function geneplate_after_entry() {
@@ -119,13 +126,6 @@ function geneplate_after_entry() {
       'after'  => '</div></div>',
     ) );
 }
-
-//* Register after-entry widget area
-genesis_register_sidebar( array(
-	'id'			=> 'after-entry',
-	'name'			=> __( 'After Entry', 'geneplate' ),
-	'description'	=> __( 'This is the after post section.', 'geneplate' ),
-) );
 
 
 /************* SIDEBARS AND WIDGETS *************/
@@ -149,7 +149,7 @@ function sidebar_wrap_close() {
 
 /************* FOOTER *************/
 
-//* Change the footer text
+//* Custom footer text and copyright info
 remove_action( 'genesis_footer', 'genesis_do_footer' );
 add_action( 'genesis_footer', 'geneplate_footer' );
 function geneplate_footer() {
