@@ -8,8 +8,15 @@ include_once( get_template_directory() . '/lib/init.php' );
 //* Child theme info (you can change it if you like)
 define( 'CHILD_THEME_NAME', __( 'Genesis Boilerplate', 'geneplate' ) );
 define( 'CHILD_THEME_URL', 'http://github.com/bradonomics/genesis-boilerplate/' );
-define( 'CHILD_THEME_VERSION', '0.8.0' );
+define( 'CHILD_THEME_VERSION', '0.0.0' );
 
+/*
+ * Versioning makes little since with software like themes.
+ * I started this project with a version number but
+ * have decided to stop keeping track; hince the 0.0.0
+ * version number above. Make sure you pull the latest
+ * from the github repo before you start a new project.
+ */
 
 /************* THEME SUPPORT *************/
 
@@ -134,10 +141,10 @@ function geneplate_after_entry() {
 add_action( 'genesis_before_sidebar_widget_area', 'sidebar_wrap_open' );
 add_action( 'genesis_after_sidebar_widget_area', 'sidebar_wrap_close' );
 function sidebar_wrap_open() {
-    echo '<div class="wrap">';
+  echo '<div class="wrap">';
 }
 function sidebar_wrap_close() {
-    echo '</div>';
+  echo '</div>';
 }
 
 
@@ -153,7 +160,5 @@ function sidebar_wrap_close() {
 remove_action( 'genesis_footer', 'genesis_do_footer' );
 add_action( 'genesis_footer', 'geneplate_footer' );
 function geneplate_footer() {
-	?>
-	<p><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a> &copy; <?php echo date('Y') ?> &middot; <a href="http://github.com/bradonomics/genesis-boilerplate/" rel="nofollow">Built using Genesis Boilerplate</a></p>
-	<?php
+  ?><p><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a> &copy; <?php echo date('Y') ?> &middot; <a href="http://github.com/bradonomics/genesis-boilerplate/" rel="nofollow">Built using Genesis Boilerplate</a></p><?php
 }
