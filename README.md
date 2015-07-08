@@ -6,7 +6,7 @@ Check out <http://studiopress.com> for documentation and details about the Genes
 
 ## Getting started
 
-To start your new child theme with Genesis Boilerplate, you can [Download the files from GitHub](https://github.com/bradonomics/genesis-boilerplate/archive/master.zip) or clone the repo: `git clone https://github.com/bradonomics/genesis-boilerplate.git`. You can then upload the files under Appearances -> Themes in your Wordpress Dashboard, although you'll probably want to add some styles before you do. Remember this is a starting point for a custom theme and pretty vanilla as it is.
+To start your new child theme with Genesis Boilerplate, you can [Download the files from GitHub](https://github.com/bradonomics/genesis-boilerplate/archive/master.zip) or clone the repo: `git clone https://github.com/bradonomics/genesis-boilerplate.git`. You can then upload the files under Appearances -> Themes in your Wordpress Dashboard, although you'll probably want to add some styles before you do. Remember this is a starting point for a custom theme and pretty vanilla as is. If it doesn't make it into 90% of my custom theme work, it isn't in the boilerplate.
 
 ### What's in the download?
 
@@ -14,13 +14,14 @@ The download includes a rewrite of [Skeleton CSS](http://getskeleton.com) to use
 
 If you're working with a designer there are also HTML samples so the designer will know what CSS classes to use and have an HTML template.
 
-You'll want to add a [screenshot.png file](http://codex.wordpress.org/Theme_Development#Screenshot) so something will show in the Wordpress Dashboard. You'll probably want to add an /images directory, and if you intend to use Javascript, a /js or /scripts directory. After this, zip the styles.css, funtions.php with these files and directories and upload the new theme to Wordpress. (If you don't have Genesis installed, this upload won't work. Check the documentation on [StudioPress.com](http://studiopress.com) for more info.)
+You'll want to add a [screenshot.png file](http://codex.wordpress.org/Theme_Development#Screenshot) so something will show in the Wordpress Dashboard. You'll probably want to add an /images directory. After this, zip the styles.css, funtions.php with these files and directories and upload the new theme to Wordpress. (If you don't have Genesis installed, this upload won't work. Check the documentation on [StudioPress.com](http://studiopress.com) for more info.)
 
 ## License
 
-[Skeleton](https://github.com/dhg/Skeleton/blob/master/LICENSE.md) and [Genesis Boilerplate](https://github.com/bradonomics/genesis-boilerplate/blob/master/LICENSE.md) are released under the open-source MIT license. The Genesis Framework itself is released under the [GPL-2.0+ License](http://www.gnu.org/licenses/gpl-2.0.html).
+[Skeleton](https://github.com/dhg/Skeleton/blob/master/LICENSE.md) is released under the open-source MIT license. The Genesis Framework itself and [Genesis Boilerplate](https://github.com/bradonomics/genesis-boilerplate/blob/master/LICENSE.md) are released under the [GPL-2.0+ License](http://www.gnu.org/licenses/gpl-2.0.html).
 
 ## Acknowledgments
 
 Skeleton was created by [Dave Gamache](https://twitter.com/dhg).
 Genesis was created by [Brian Gardner](https://twitter.com/bgardner).
+Genesis Boilerplate was created by [Brad West](http://bradonomics.com/).
