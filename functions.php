@@ -11,11 +11,12 @@ define( 'CHILD_THEME_URL', 'http://github.com/bradonomics/genesis-boilerplate/' 
 define( 'CHILD_THEME_VERSION', '0.0.0' );
 
 /*
- * Versioning makes little sense with software like themes.
- * I started this project with a version number but have
- * decided to stop keeping track; hence the 0.0.0 version
- * number above. Make sure you pull the latest from the
- * github repo before you start a new project.
+ * Versioning makes little sense with software like a
+ * boilerplate theme. I started this project with a
+ * version number but have decided to stop keeping
+ * track; hence the 0.0.0 version number above. Make
+ * sure you pull the latest from the github repo before
+ * you start a new project.
  */
 
 /************* THEME SUPPORT *************/
@@ -26,7 +27,7 @@ function geneplate_enqueue_scripts() {
   wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Railway', array(), CHILD_THEME_VERSION );
   wp_enqueue_script( 'responsive-menu-icon', get_bloginfo( 'stylesheet_directory' ) . '/js/responsive-menu.js', array( 'jquery' ), CHILD_THEME_VERSION );
   wp_enqueue_style( 'dashicons' );
-  wp_deregister_script( 'comment-reply' );
+  wp_dequeue_script ( 'comment-reply' );
 }
 
 //* Move child theme stylesheet to the end of the line so it takes precedence over plugin stylesheets.
