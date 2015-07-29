@@ -88,6 +88,8 @@ remove_action( 'wp_head', 'wp_generator' );
 //* Remove RSD Link in Header
 remove_action( 'wp_head', 'rsd_link' );
 
+//* Include Open Graph Data
+include_once( get_stylesheet_directory() . '/inc/open_graph.php' );
 
 /************* CONTENT AREA *************/
 
