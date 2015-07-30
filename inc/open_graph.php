@@ -1,11 +1,9 @@
 <?php
 
-/**
- * Detect plugin. For use on Front End only.
- */
+//* Detect plugins
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
-// check for plugin using plugin name
+//* Check for plugins that ouput open graph data
 if ( is_plugin_active( 'wordpress-seo/wp-seo.php' ) || is_plugin_active( 'seo-ultimate/seo-ultimate.php' ) || is_plugin_active( 'all-in-one-seo-pack/all_in_one_seo_pack.php' ) || is_plugin_active( 'wp-facebook-open-graph-protocol/wp-facebook-ogp.php' ) || is_plugin_active( 'wonderm00ns-simple-facebook-open-graph-tags/wonderm00n-open-graph.php' ) || is_plugin_active( 'platinum-seo-pack/platinum_seo_pack.php' ) ) {
 
     return;
@@ -23,10 +21,8 @@ function catch_first_image() {
     $first_img = $matches [1] [0];
 
     if ( empty( $first_img ) ) {
-        $first_img = "http://bradonomics.com/wp-content/themes/bradonomics/images/bradonomics-cover.jpg";
+        $first_img = get_theme_mod( 'geneplate_cover_image' );
     }
-
-    // TODO: Add an image picker to the customizer for default image.
 
     return $first_img;
 
