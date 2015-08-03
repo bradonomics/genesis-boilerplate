@@ -19,7 +19,7 @@
 add_action( 'customize_register', 'geneplate_customize_register' );
 function geneplate_customize_register( $wp_customize ) {
 
-  	/* Background Image Options
+  	/* Open Graph Image Options
 	 *------------------------------------------*/
 
 	$wp_customize->add_section(
