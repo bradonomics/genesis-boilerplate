@@ -28,12 +28,10 @@ function catch_first_image() {
 
 }
 
-//* Add Open Graph meta tag to Head
-add_action( 'genesis_meta', 'fb_opengraph' );
-function fb_opengraph() {
-    global $post;
+//* Call the featured image or the first image function above
+function og_image() {
+    global $post, $posts;
 
-    // Call the featured image or the first image function above
     if( has_post_thumbnail( $post->ID ) ) {
         $img_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' )[0];
     }
@@ -41,21 +39,37 @@ function fb_opengraph() {
         $img_src = catch_first_image();
     }
 
-    // Call the description, Genesis first then WordPress
+}
+
+//* Get a description
+function og_description() {
+    global $post, $posts;
+
+    //* Call the description, Genesis first then WordPress
     $genesis_description = genesis_get_custom_field( '_genesis_description' );
 
     if ( !empty( $genesis_description ) ) {
         $open_graph_description = $genesis_description;
     }
-    else {
-        if ( has_excerpt( $post->ID ) ) {
-            $open_graph_description = strip_tags( get_the_excerpt() );
-        }
-        else {
-            $open_graph_description = str_replace( "\r\n", ' ' , substr( strip_tags( strip_shortcodes( $post->post_content ) ), 0, 160 ) );
-        }
+
+    return $open_graph_description;
+
+    if ( !empty( $open_graph_description ) ) {
+      if ( has_excerpt( $post->ID ) ) {
+          $open_graph_description = strip_tags( get_the_excerpt() );
+      }
+      else {
+          $open_graph_description = str_replace( "\r\n", ' ' , substr( strip_tags( strip_shortcodes( $post->post_content ) ), 0, 160 ) );
+      }
     }
-?>
+
+    return $open_graph_description;
+
+}
+
+//* Add Open Graph meta tag to Head
+add_action( 'genesis_meta', 'meta_do_opengraph' );
+function meta_do_opengraph(){ ?>
 <meta property="og:image" content="<?php echo $img_src; ?>">
 <meta property="og:title" content="<?php echo the_title(); ?>">
 <meta property="og:url" content="<?php echo the_permalink(); ?>">
