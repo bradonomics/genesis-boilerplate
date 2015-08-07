@@ -26,7 +26,6 @@ add_action( 'wp_enqueue_scripts', 'geneplate_enqueue_scripts' );
 function geneplate_enqueue_scripts() {
   wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Railway', array(), CHILD_THEME_VERSION );
   wp_enqueue_style( 'dashicons' );
-  wp_dequeue_script ( 'comment-reply' );
 
   //* Move jQuery before closing body tag.
   wp_deregister_script( 'jquery' );
