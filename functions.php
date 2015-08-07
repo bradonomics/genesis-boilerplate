@@ -62,9 +62,6 @@ remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
 remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
-//* Add WordPress Theme Customizer
-require_once( get_stylesheet_directory() . '/inc/theme_customizer.php' );
-
 
 /************* UNREGISTER LAYOUTS AND WIDGETS *************/
 
@@ -100,9 +97,6 @@ remove_action( 'wp_head', 'wp_generator' );
 
 //* Remove RSD Link in Header
 remove_action( 'wp_head', 'rsd_link' );
-
-//* Include Open Graph Data
-include_once( get_stylesheet_directory() . '/inc/open_graph.php' );
 
 
 /************* CONTENT AREA *************/
