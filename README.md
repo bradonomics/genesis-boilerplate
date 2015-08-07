@@ -36,5 +36,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 ## Acknowledgments
 
 Skeleton was created by [Dave Gamache](https://twitter.com/dhg).
+
 Genesis was created by [Brian Gardner](https://twitter.com/bgardner).
+
 Genesis Boilerplate was created by [Brad West](http://bradonomics.com/).
