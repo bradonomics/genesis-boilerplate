@@ -6,7 +6,7 @@ Check out <http://studiopress.com> for documentation and details about the Genes
 
 ## Getting started
 
-To start your new child theme with Genesis Boilerplate, you can [Download the files from GitHub](https://github.com/bradonomics/genesis-boilerplate/archive/master.zip) or clone the repo: `git clone https://github.com/bradonomics/genesis-boilerplate.git`. You can then upload the files under Appearances -> Themes in your Wordpress Dashboard, although you'll probably want to add some styles before you do. Remember this is a starting point for a custom theme and pretty vanilla as is. If it doesn't make it into 90% of my custom theme work, it isn't in the boilerplate.
+To start your new child theme with Genesis Boilerplate, you can [Download the files from GitHub](https://github.com/bradonomics/genesis-boilerplate/archive/master.zip) (or clone the repo: `git clone https://github.com/bradonomics/genesis-boilerplate.git`). You can then upload the files under Appearances -> Themes in your Wordpress Dashboard, although you'll probably want to add some styles before you do. Remember this is a starting point for a custom theme and pretty vanilla as is. If it doesn't make it into 90% of my custom theme work, it isn't in the boilerplate.
 
 ### What's in the download?
 
