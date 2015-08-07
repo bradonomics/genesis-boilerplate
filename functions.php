@@ -25,9 +25,20 @@ define( 'CHILD_THEME_VERSION', '0.0.0' );
 add_action( 'wp_enqueue_scripts', 'geneplate_enqueue_scripts' );
 function geneplate_enqueue_scripts() {
   wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Railway', array(), CHILD_THEME_VERSION );
-  wp_enqueue_script( 'responsive-menu-icon', get_bloginfo( 'stylesheet_directory' ) . '/js/responsive-menu.js', array( 'jquery' ), CHILD_THEME_VERSION );
   wp_enqueue_style( 'dashicons' );
   wp_dequeue_script ( 'comment-reply' );
+
+  //* Move jQuery before closing body tag.
+  wp_deregister_script( 'jquery' );
+  wp_register_script( 'jquery', includes_url( '/js/jquery/jquery.js' ), false, NULL, true );
+  wp_enqueue_script( 'jquery' );
+
+  //* To use jQuery Migrate uncomment the wp_register_script & wp_enqueue_script lines.
+  wp_deregister_script( 'jquery-ui' );
+//  wp_register_script( 'jquery-ui', includes_url( '/js/jquery/jquery-migrate.min.js' ), false, NULL, true );
+//  wp_enqueue_script( 'jquery-ui' );
+
+  wp_enqueue_script( 'responsive-menu-icon', get_bloginfo( 'stylesheet_directory' ) . '/js/responsive-menu.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
 }
 
 //* Move child theme stylesheet to the end of the line so it takes precedence over plugin stylesheets.
