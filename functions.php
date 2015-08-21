@@ -129,23 +129,8 @@ function iframe_responsive_wrapper($content) {
 
 }
 
-//* Register after-entry widget area
-genesis_register_sidebar( array(
-	'id'			=> 'after-entry',
-	'name'			=> __( 'After Entry', 'geneplate' ),
-	'description'	=> __( 'This is the after post section.', 'geneplate' ),
-) );
-
-//* Hooks after-entry widget area to single posts
-add_action( 'genesis_entry_footer', 'geneplate_after_entry' );
-function geneplate_after_entry() {
-  if ( ! is_singular( 'post' ) )
-    return;
-    genesis_widget_area( 'after-entry', array(
-      'before' => '<div class="after-entry widget-area"><div class="wrap">',
-      'after'  => '</div></div>',
-    ) );
-}
+//* Add support for after entry widget
+//add_theme_support( 'genesis-after-entry-widget-area' );
 
 
 /************* SIDEBARS AND WIDGETS *************/
