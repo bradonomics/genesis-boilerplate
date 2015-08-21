@@ -104,14 +104,14 @@ remove_action( 'wp_head', 'rsd_link' );
 /************* CONTENT AREA *************/
 
 //* Add wrap inside entry-content div in case full-width images are needed.
-add_action( 'genesis_entry_content', 'entry_content_wrap_open', 1 );
-add_action( 'genesis_entry_content', 'entry_content_wrap_close', 25 );
-function entry_content_wrap_open() {
-    echo '<div class="wrap">';
-}
-function entry_content_wrap_close() {
-    echo '</div>';
-}
+//add_action( 'genesis_entry_content', 'entry_content_wrap_open', 1 );
+//add_action( 'genesis_entry_content', 'entry_content_wrap_close', 25 );
+//function entry_content_wrap_open() {
+//    echo '<div class="wrap">';
+//}
+//function entry_content_wrap_close() {
+//    echo '</div>';
+//}
 
 //* Add a 'iframe-embed' div around videos and such for responsive designs
 add_filter('the_content', 'iframe_responsive_wrapper');
@@ -122,6 +122,22 @@ function iframe_responsive_wrapper($content) {
 
   foreach ($matches[0] as $match) {
     $wrappedframe = '<div class="iframe-embed">' . $match . '</div>';
+    $content = str_replace($match, $wrappedframe, $content);
+  }
+
+  return $content;
+
+}
+
+//* Add wrap divs around tables
+add_filter('the_content', 'table_responsive_wrapper');
+function table_responsive_wrapper($content) {
+
+  $pattern = '/<table.*?<\/table>/si';
+  preg_match_all($pattern, $content, $matches);
+
+  foreach ($matches[0] as $match) {
+    $wrappedframe = '<div class="wrap">' . $match . '</div>';
     $content = str_replace($match, $wrappedframe, $content);
   }
 
