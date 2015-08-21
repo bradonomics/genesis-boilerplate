@@ -103,7 +103,7 @@ body {
   font-size: 1.6em; /* chrome bug misinterpreting rems on body element */
   line-height: 1.6;
   font-weight: 400;
-  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Raleway, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #222;
   text-rendering: optimizeLegibility;
 }
@@ -385,11 +385,12 @@ td {
 /* Quotes
 -------------------------------------------------- */
 blockquote {
+  max-width: 680px;
+  margin: 1.6rem auto;
   padding-top: 1rem;
   padding-bottom: 1rem;
   padding-right: 2rem;
   padding-left: 4rem;
-  margin: 1.6rem 0;
   border-left: .5rem solid #e5e5e5;
 }
 @media (min-width: 400px) {
@@ -410,7 +411,7 @@ blockquote::before {
 }
 
 blockquote p {
-  padding-left: 0;
+  padding: 0 !important;
 }
 
 blockquote p:last-child {
@@ -874,6 +875,21 @@ blockquote p {
 
 .entry-title a:hover {
   color: #1EAEDB;
+}
+
+.entry-content h1,
+.entry-content h2,
+.entry-content h3,
+.entry-content h4,
+.entry-content h5,
+.entry-content h6,
+.entry-content p,
+.entry-content ul,
+.entry-content ol {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 40px;
+  max-width: 760px;
 }
 
 
