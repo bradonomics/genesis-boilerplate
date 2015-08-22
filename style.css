@@ -482,6 +482,11 @@ blockquote p {
   }
 }
 
+/* wrap inside entry-content; mostly for iframe embeds */
+.entry-content .wrap {
+  max-width: 760px;
+}
+
 
 /* Header
 -------------------------------------------------- */
@@ -888,7 +893,7 @@ blockquote p {
 .entry-content ol {
   margin-left: auto;
   margin-right: auto;
-  padding: 0 40px;
+  padding: 0 20px;
   max-width: 760px;
 }
 

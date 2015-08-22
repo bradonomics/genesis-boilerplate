@@ -111,7 +111,7 @@ function iframe_responsive_wrapper($content) {
   preg_match_all($pattern, $content, $matches);
 
   foreach ($matches[0] as $match) {
-    $wrappedframe = '<div class="iframe-embed">' . $match . '</div>';
+    $wrappedframe = '<div class="wrap"><div class="iframe-embed">' . $match . '</div></div>';
     $content = str_replace($match, $wrappedframe, $content);
   }
 
