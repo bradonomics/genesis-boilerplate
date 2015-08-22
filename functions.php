@@ -103,16 +103,6 @@ remove_action( 'wp_head', 'rsd_link' );
 
 /************* CONTENT AREA *************/
 
-//* Add wrap inside entry-content div in case full-width images are needed.
-//add_action( 'genesis_entry_content', 'entry_content_wrap_open', 1 );
-//add_action( 'genesis_entry_content', 'entry_content_wrap_close', 25 );
-//function entry_content_wrap_open() {
-//    echo '<div class="wrap">';
-//}
-//function entry_content_wrap_close() {
-//    echo '</div>';
-//}
-
 //* Add a 'iframe-embed' div around videos and such for responsive designs
 add_filter('the_content', 'iframe_responsive_wrapper');
 function iframe_responsive_wrapper($content) {
@@ -149,7 +139,7 @@ function table_responsive_wrapper($content) {
 //add_theme_support( 'genesis-after-entry-widget-area' );
 
 
-/************* SIDEBARS AND WIDGETS *************/
+/************* SIDEBARS *************/
 
 //* Add wrap inside sidebar div.
 add_action( 'genesis_before_sidebar_widget_area', 'sidebar_wrap_open' );
