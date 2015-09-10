@@ -52,8 +52,15 @@ add_theme_support( 'html5' );
 //* Add viewport meta tag for mobile browsers
 add_theme_support( 'genesis-responsive-viewport' );
 
-//* Add Structural Wraps
-add_theme_support( 'genesis-structural-wraps', array( 'header', 'footer-widgets', 'footer' ) );
+//* Add support for structural wraps (max-width has been added to most content-entry elements to allow for full-width images. If you don't need full-width images in your non-template posts and pages, you can add structural wrap in site-inner.)
+add_theme_support( 'genesis-structural-wraps', array(
+    'header',
+//  'nav',
+//  'subnav',
+//  'site-inner',
+    'footer-widgets',
+    'footer'
+) );
 
 //* Remove Edit Link
 add_filter( 'edit_post_link', '__return_false' );
