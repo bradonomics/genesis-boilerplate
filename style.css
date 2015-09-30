@@ -428,11 +428,11 @@ blockquote p {
 /* Structure and Layout
 -------------------------------------------------- */
 .site-container {
-  display:-webkit-box; /*old prefixed for webkit*/
-  display:-moz-box; /*old prefixed for mozilla*/
-  display:-ms-flexbox; /*inbetween prefixed for ie*/
-  display:-webkit-flex; /*new prefixed for webkit*/
-  display:flex; /*new*/
+  display: -webkit-box; /* old prefixed for webkit */
+  display: -moz-box; /* old prefixed for mozilla */
+  display: -ms-flexbox; /* inbetween prefixed for ie */
+  display: -webkit-flex; /* new prefixed for webkit */
+  display: flex; /* new */
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
