@@ -16,20 +16,14 @@ GNU General Public License for more details.
 This program incorporates work covered by the following copyright and
 permission notices:
 
-  WordPress - http://wordpress.org
-  Copyright 2003-2010 by the contributors
+  WordPress - http://wordpress.org<br>
+  Copyright 2003-2010 by the contributors<br>
   WordPress is released under the GPL
 
 and
 
-  StudioPress - http://studiopress.com
+  StudioPress - http://studiopress.com<br>
   Copyright (C) by the contributors
-
-and
-
-  Genesis Boilerplate - http://github.com/bradonomics/genesis-boilerplate
-  Copyright 2015 by the contributors
-  Genesis Boilerplate is released under the GPL
 
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
