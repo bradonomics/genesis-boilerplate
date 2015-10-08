@@ -4,9 +4,8 @@ the Genesis Framework
 Copyright (C) 2015 by Brad West - http://bradonomics.com
 
 This program is free software; you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation; either version 2 of the License, or
-(at your option) any later version.
+it under the terms of the GNU General Public License, version 2, as
+published by the Free Software Foundation.
 
 This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -18,12 +17,16 @@ permission notices:
 
   WordPress - http://wordpress.org<br>
   Copyright 2003-2010 by the contributors<br>
-  WordPress is released under the GPL
 
 and
 
   StudioPress - http://studiopress.com<br>
   Copyright (C) by the contributors
+
+and
+
+  Skeleton - http://getskeleton.com<br>
+  Copyright (c) 2011-2014 Dave Gamache
 
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
