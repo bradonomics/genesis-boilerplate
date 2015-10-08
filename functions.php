@@ -70,7 +70,7 @@ remove_action( 'wp_print_styles', 'print_emoji_styles' );
 remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
 
-/************* UNREGISTER LAYOUTS AND WIDGETS *************/
+/************* LAYOUTS AND WIDGETS *************/
 
 //* Unregister layout settings
   //* Remove the comment line to activate the removal of any layouts you don't intend to use.
@@ -106,9 +106,12 @@ remove_action( 'wp_head', 'wp_generator' );
 remove_action( 'wp_head', 'rsd_link' );
 
 
-/************* CONTENT AREA *************/
+/************* SITE HEADER *************/
 
-//* Add a 'iframe-embed' div around videos and such for responsive designs
+
+/************* SITE INNER *************/
+
+//* Add a 'iframe-embed' div around videos for responsive designs.
 add_filter('the_content', 'iframe_responsive_wrapper');
 function iframe_responsive_wrapper($content) {
 
@@ -124,7 +127,7 @@ function iframe_responsive_wrapper($content) {
 
 }
 
-//* Add wrap divs around tables
+//* Add wrap divs around tables.
 add_filter('the_content', 'table_responsive_wrapper');
 function table_responsive_wrapper($content) {
 
@@ -140,7 +143,7 @@ function table_responsive_wrapper($content) {
 
 }
 
-//* Add support for after entry widget
+//* Add support for after entry widget.
 //add_theme_support( 'genesis-after-entry-widget-area' );
 
 
@@ -159,13 +162,13 @@ function sidebar_wrap_close() {
 
 /************* FOOTER WIDGETS *************/
 
-//* Add 2, 3 or 4-Column Footer Widget Area
+//* Add 2, 3 or 4-Column Footer Widget Area.
 // add_theme_support( 'genesis-footer-widgets', 3 );
 
 
-/************* FOOTER *************/
+/************* SITE FOOTER *************/
 
-//* Custom footer text and copyright info
+//* Custom footer text and copyright info.
 remove_action( 'genesis_footer', 'genesis_do_footer' );
 add_action( 'genesis_footer', 'geneplate_footer' );
 function geneplate_footer() {
