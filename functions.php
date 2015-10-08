@@ -31,13 +31,11 @@ function geneplate_enqueue_scripts() {
 
   //* Move jQuery before closing body tag.
   wp_deregister_script( 'jquery' );
-  wp_register_script( 'jquery', includes_url( '/js/jquery/jquery.js' ), false, NULL, true );
-  wp_enqueue_script( 'jquery' );
+  wp_enqueue_script( 'jquery', includes_url( '/js/jquery/jquery.js' ), false, NULL, true );
 
   //* To use jQuery Migrate uncomment the wp_register_script & wp_enqueue_script lines.
   wp_deregister_script( 'jquery-ui' );
-//  wp_register_script( 'jquery-ui', includes_url( '/js/jquery/jquery-migrate.min.js' ), false, NULL, true );
-//  wp_enqueue_script( 'jquery-ui' );
+//  wp_enqueue_script( 'jquery-ui', includes_url( '/js/jquery/jquery-migrate.min.js' ), false, NULL, true );
 
   wp_enqueue_script( 'responsive-menu-icon', get_bloginfo( 'stylesheet_directory' ) . '/js/responsive-menu.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
 }
