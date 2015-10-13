@@ -240,6 +240,7 @@ input[type="button"]:focus {
   color: #FFF;
   background-color: #1EAEDB;
   border-color: #1EAEDB;
+  outline: none;
 }
 
 
@@ -369,8 +370,6 @@ li {
 /* Tables
 -------------------------------------------------- */
 table {
-  margin-right: 2.5rem;
-  margin-left: 2.5rem;
   margin-bottom: 2.5rem;
 }
 
