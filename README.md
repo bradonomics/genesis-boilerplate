@@ -1,7 +1,8 @@
 # Genesis Boilerplate
-Genesis boilerplate is a starter kit for Genesis child themes based on Skeleton CSS.
+Genesis boilerplate is a starter kit for Genesis child themes.
 
-Check out <http://getskeleton.com> for documentation and details about the Skeleton CSS framework.
+Skeleton was the original CSS framework, although many changes have been made in the meanwhile. Check out <http://getskeleton.com> for documentation and details about the Skeleton CSS framework.
+
 Check out <http://studiopress.com> for documentation and details about the Genesis Framework.
 
 ## Getting Started
@@ -10,7 +11,7 @@ To start your new child theme with Genesis Boilerplate, you can [Download the fi
 
 ### What's in the download?
 
-The download includes a rewrite of [Skeleton CSS](http://getskeleton.com) to use standard Genesis classes and a functions file to get you started building a custom Genesis child theme.
+The download includes a rewrite of [Skeleton CSS](http://getskeleton.com) to use standard Genesis classes, and a functions file to get you started building a custom Genesis child theme.
 
 If you're working with a designer there are also HTML samples so the designer will know what CSS classes to use and have an HTML template.
 
@@ -18,7 +19,7 @@ You'll want to add a [screenshot.png file](http://codex.wordpress.org/Theme_Deve
 
 ## License
 
-[Skeleton](https://github.com/dhg/Skeleton/blob/master/LICENSE.md) is released under the open-source MIT license. The Genesis Framework itself and [Genesis Boilerplate](https://github.com/bradonomics/genesis-boilerplate/blob/master/LICENSE.md) are released under the [GPL-2.0+ License](http://www.gnu.org/licenses/gpl-2.0.html).
+[Skeleton](https://github.com/dhg/Skeleton/blob/master/LICENSE.md) is released under the open-source MIT license. The Genesis Framework itself and [Genesis Boilerplate](https://github.com/bradonomics/genesis-boilerplate/blob/master/LICENSE.md) are released under the [GPL-2.0 License](http://www.gnu.org/licenses/gpl-2.0.html).
 
 > This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License, version 2, as
