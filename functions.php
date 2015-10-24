@@ -50,7 +50,7 @@ add_theme_support( 'html5' );
 //* Add viewport meta tag for mobile browsers
 add_theme_support( 'genesis-responsive-viewport' );
 
-//* Add support for structural wraps (max-width has been added to most content-entry elements to allow for full-width images. If you don't need full-width images in your non-template posts and pages, you can add structural wrap in site-inner.)
+//* Add support for structural wraps (max-width has been added to most content-entry elements to allow for full-width images on any page or post. If you don't need full-width images, you can add structural wrap in site-inner.)
 add_theme_support( 'genesis-structural-wraps', array(
     'header',
 //  'nav',
@@ -60,7 +60,7 @@ add_theme_support( 'genesis-structural-wraps', array(
     'footer'
 ) );
 
-//* Remove Edit Link
+//* Remove Edit Post Link
 add_filter( 'edit_post_link', '__return_false' );
 
 //* Remove Emoji
@@ -73,7 +73,7 @@ remove_action( 'admin_print_styles', 'print_emoji_styles' );
 /************* LAYOUTS AND WIDGETS *************/
 
 //* Unregister layout settings
-  //* Remove the comment line to activate the removal of any layouts you don't intend to use.
+  //* Remove the comment line to remove any layouts you don't intend to use.
 // genesis_unregister_layout( 'full-width-content' );
 // genesis_unregister_layout( 'content-sidebar' );
 // genesis_unregister_layout( 'sidebar-content' );
@@ -82,13 +82,13 @@ genesis_unregister_layout( 'sidebar-sidebar-content' );
 genesis_unregister_layout( 'sidebar-content-sidebar' );
 
 //* Unregister Sidebars
-  //* Remove the comment line to activate the removal of the sidebars if you don't intend to use them.
+  //* Remove the comment line to remove the sidebar if you don't intend to use one.
 // unregister_sidebar( 'sidebar' );
 unregister_sidebar( 'sidebar-alt' );
 unregister_sidebar( 'header-right' );
 
 //* Remove unused Genesis Widgets
-  //* Add a comment to block or remove the line to deactivate the removal of any widgets you'd like to use.
+  //* Add a comment to block or remove the line to add widgets you'd like to use.
 add_action( 'widgets_init', 'remove_genesis_widgets', 20 );
 function remove_genesis_widgets() {
   unregister_widget( 'Genesis_Featured_Page' );
