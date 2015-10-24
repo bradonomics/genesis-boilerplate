@@ -26,7 +26,7 @@ and
 and
 
   Skeleton - http://getskeleton.com<br>
-  Copyright (c) 2011-2014 Dave Gamache
+  Copyright (C) 2011-2014 Dave Gamache
 
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
