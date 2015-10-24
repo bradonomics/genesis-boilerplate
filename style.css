@@ -1,7 +1,7 @@
 /*
   Theme Name: Genesis Boilerplate
   Theme URI: http://github.com/bradonomics/genesis-boilerplate
-  Description: Boilerplate code for Genesis child themes built on the Skeleton framework.
+  Description: Boilerplate code for Genesis child themes.
   Author: Brad West
   Author URI: http://bradonomics.com/
   Version: 0.0.0
@@ -1214,3 +1214,4 @@ img.alignright,
 }
 
 /* TODO: Replace all em and rem with px. */
+/* TODO: Replace min-width media queries with max-width. */
