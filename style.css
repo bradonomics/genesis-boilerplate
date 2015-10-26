@@ -28,6 +28,7 @@
 - Navigation
 - Responsive Menu
 - Grid
+- Entry Content
 - Entry Meta
 - Images
 - Iframe Embeds
@@ -797,13 +798,13 @@ blockquote p {
 
 .one-half,
 .one-third,
-.one-forth {
+.one-fourth {
   width: 100%;
 }
 
 @media (min-width: 550px) {
   .one-half,
-  .one-forth {
+  .one-fourth {
     width: 50%;
   }
 }
@@ -813,7 +814,7 @@ blockquote p {
   }
 }
 @media (min-width: 1000px) {
-  .one-forth {
+  .one-fourth {
     width: 25%;
   }
 }
