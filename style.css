@@ -697,15 +697,6 @@ blockquote p {
   }
 }
 
-@media (min-width: 550px) {
-  .genesis-nav-menu .menu-item:hover > .sub-menu > .menu-item:hover > .sub-menu {
-    left: 140px;
-    margin-left: 0px;
-    margin-top: -56px;
-    opacity: 1;
-  }
-}
-
 .genesis-nav-menu .sub-menu a {
   color: #000;
   letter-spacing: 0;
