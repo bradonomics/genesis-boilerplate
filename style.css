@@ -102,7 +102,7 @@ html {
 
 body {
   height: 100%;
-  font-size: 1.6em; /* chrome bug misinterpreting rems on body element */
+  font-size: 16px;
   line-height: 1.6;
   font-weight: 400;
   font-family: Raleway, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -130,52 +130,52 @@ h4,
 h5,
 h6 {
   margin-top: 0;
-  margin-bottom: 2rem;
+  margin-bottom: 20px;
   font-weight: 300;
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 40px;
   line-height: 1.2;
 }
 
 h2 {
-  font-size: 3.6rem;
+  font-size: 36px;
   line-height: 1.25;
 }
 
 h3 {
-  font-size: 3rem;
+  font-size: 30px;
   line-height: 1.3;
 }
 
 h4 {
-  font-size: 2.4rem;
+  font-size: 24px;
   line-height: 1.35;
 }
 
 h5 {
-  font-size: 1.8rem;
+  font-size: 18px;
   line-height: 1.5;
 }
 
 h6 {
-  font-size: 1.5rem;
+  font-size: 15px;
   line-height: 1.6;
 }
 
 @media (min-width: 550px) {
-  h1 { font-size: 5rem; }
-  h2 { font-size: 4.2rem; }
-  h3 { font-size: 3.6rem; }
-  h4 { font-size: 3rem; }
-  h5 { font-size: 2.4rem; }
-  h6 { font-size: 1.5rem; }
+  h1 { font-size: 50px; }
+  h2 { font-size: 42px; }
+  h3 { font-size: 36px; }
+  h4 { font-size: 30px; }
+  h5 { font-size: 24px; }
+  h6 { font-size: 15px; }
 }
 
 p {
   margin-top: 0;
-  margin-bottom: 2.5rem;
+  margin-bottom: 25px;
   word-break: break-word;
 }
 
@@ -207,7 +207,7 @@ input[type="button"] {
   font-size: 11px;
   font-weight: 600;
   line-height: 38px;
-  letter-spacing: .1rem;
+  letter-spacing: 1px;
   text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
@@ -226,7 +226,7 @@ input[type="button"] {
 
 button,
 .button {
-  margin-bottom: 1rem;
+  margin-bottom: 10px;
 }
 
 .button:hover,
@@ -249,7 +249,7 @@ input[type="button"]:focus {
 /* Forms
 -------------------------------------------------- */
 form {
-  margin-bottom: 2.5rem;
+  margin-bottom: 25px;
 }
 
 input[type="email"],
@@ -299,20 +299,20 @@ select:focus {
 
 textarea {
   min-height: 65px;
-  margin-bottom: 1.5rem;
+  margin-bottom: 15px;
   padding-top: 6px;
   padding-bottom: 6px;
 }
 
 fieldset {
-  margin-bottom: 1.5rem;
+  margin-bottom: 15px;
   padding: 0;
   border-width: 0;
 }
 
 input,
 select {
-  margin-bottom: 1.5rem;
+  margin-bottom: 15px;
 }
 
 input[type="checkbox"],
@@ -323,13 +323,13 @@ input[type="radio"] {
 label,
 legend {
   display: block;
-  margin-bottom: .5rem;
+  margin-bottom: 5px;
   font-weight: 600;
 }
 
 label > .label-body {
   display: inline-block;
-  margin-left: .5rem;
+  margin-left: 5px;
   font-weight: normal;
 }
 
@@ -348,14 +348,14 @@ ol {
 ol,
 ul {
   margin-top: 0;
-  margin-bottom: 2.5rem;
+  margin-bottom: 25px;
 }
 
 ul ul,
 ul ol,
 ol ol,
 ol ul {
-  margin: 1.5rem 0 1.5rem 3rem;
+  margin: 15px 0 15px 30px;
 }
 
 .entry-content ol ol,
@@ -365,14 +365,14 @@ ol ul {
 
 
 li {
-  margin-bottom: 1rem;
+  margin-bottom: 10px;
 }
 
 
 /* Tables
 -------------------------------------------------- */
 table {
-  margin-bottom: 2.5rem;
+  margin-bottom: 25px;
 }
 
 th,
@@ -387,16 +387,16 @@ td {
 -------------------------------------------------- */
 blockquote {
   max-width: 680px;
-  margin: 1.6rem auto;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  padding-right: 2rem;
-  padding-left: 4rem;
-  border-left: .5rem solid #e5e5e5;
+  margin: 16px auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 20px;
+  padding-left: 40px;
+  border-left: 5px solid #e5e5e5;
 }
 @media (min-width: 400px) {
   blockquote {
-    padding-right: 6rem;
+    padding-right: 60px;
   }
 }
 
@@ -407,7 +407,6 @@ blockquote::before {
   content: "“";
   display: block;
   font-size: 40px;
-  font-size: 4rem;
   height: 0;
 }
 
@@ -987,7 +986,7 @@ img.alignright,
 -------------------------------------------------- */
 .iframe-embed {
   position: relative;
-  margin-bottom: 1rem;
+  margin-bottom: 10px;
   padding-bottom: 56.25%;
   overflow: hidden;
   max-width: 100%;
@@ -1020,7 +1019,7 @@ img.alignright,
 
 .widget li li {
   border: none;
-  margin: 0 0 0 3rem;
+  margin: 0 0 0 30px;
   padding: 0;
 }
 
@@ -1031,7 +1030,6 @@ img.alignright,
   float: right;
   width: 100%;
   font-size: 16px;
-  font-size: 1.6rem;
 }
 @media (min-width: 1000px) {
   .sidebar {
@@ -1046,7 +1044,7 @@ img.alignright,
 
 .sidebar li {
   border-bottom: 1px dotted #ddd;
-  margin-bottom: 1rem;
+  margin-bottom: 10px;
   padding-bottom: 10px;
 }
 
@@ -1057,7 +1055,7 @@ img.alignright,
 
 .sidebar .widget {
   background-color: #fff;
-  margin-bottom: 4rem;
+  margin-bottom: 40px;
 }
 
 
@@ -1104,7 +1102,7 @@ img.alignright,
 }
 
 .footer-widgets .widget {
-  margin-bottom: 4rem;
+  margin-bottom: 40px;
 }
 
 .footer-widgets p:last-child {
@@ -1205,6 +1203,3 @@ img.alignright,
 /* Larger than Desktop HD */
 @media (min-width: 1200px) {
 }
-
-/* TODO: Replace all em and rem with px. */
-/* TODO: Replace min-width media queries with max-width. */
