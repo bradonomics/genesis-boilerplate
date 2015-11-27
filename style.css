@@ -48,9 +48,7 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
 /* Box Sizing
 -------------------------------------------------- */
 *, *:before, *:after {
-  -webkit-box-sizing: inherit;
-     -moz-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 /* Float Clearing
@@ -95,9 +93,7 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
 html {
   font-size: 62.5%;
   height: 100%;
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -218,9 +214,6 @@ input[type="button"] {
   cursor: pointer;
   box-sizing: border-box;
   -webkit-transition: all 0.1s ease-in-out;
-     -moz-transition: all 0.1s ease-in-out;
-      -ms-transition: all 0.1s ease-in-out;
-       -o-transition: all 0.1s ease-in-out;
           transition: all 0.1s ease-in-out;
 }
 
@@ -429,7 +422,6 @@ blockquote p {
 -------------------------------------------------- */
 .site-container {
   display: -webkit-box; /* old prefixed for webkit */
-  display: -moz-box; /* old prefixed for mozilla */
   display: -ms-flexbox; /* inbetween prefixed for ie */
   display: -webkit-flex; /* new prefixed for webkit */
   display: flex;
@@ -679,9 +671,6 @@ blockquote p {
   opacity: 1;
   position: relative;
   -webkit-transition: opacity .4s ease-in-out;
-     -moz-transition: opacity .4s ease-in-out;
-      -ms-transition: opacity .4s ease-in-out;
-       -o-transition: opacity .4s ease-in-out;
           transition: opacity .4s ease-in-out;
   z-index: 99;
 }
