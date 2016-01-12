@@ -9,13 +9,10 @@ var gulp         = require('gulp'),
     minifycss    = require('gulp-minify-css'),
     concat       = require('gulp-concat'),
     uglify       = require('gulp-uglify'),
-    rename       = require('gulp-rename'),
-    newer        = require('gulp-newer'),
-    imagemin     = require('gulp-imagemin'),
     browserSync  = require('browser-sync');
 
 
-//* Setup new project directories with "npm install --save-dev gulp gulp-ruby-sass gulp-autoprefixer gulp-minify-css gulp-concat gulp-uglify gulp-rename gulp-newer gulp-imagemin browser-sync"
+//* Setup new project directories with "npm install --save-dev gulp gulp-ruby-sass gulp-autoprefixer gulp-minify-css gulp-concat gulp-uglify browser-sync"
 
 
 //* Styles
@@ -51,15 +48,6 @@ gulp.task('themejs', function() {
       suffix: '.min'
     }))
     .pipe(gulp.dest('./js'));
-});
-
-
-//* Images
-gulp.task('images', function() {
-  return gulp.src(['./dev/images/*.{png,jpg,gif}'])
-    .pipe(newer('./dev/images/*.{png,jpg,gif}'))
-    .pipe(imagemin())
-    .pipe(gulp.dest('./images/'));
 });
 
 
