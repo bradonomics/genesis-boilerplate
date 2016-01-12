@@ -18,20 +18,79 @@
   -webkit-flex: 3 0 auto;
       -ms-flex: 3 0 auto;
           flex: 3 0 auto;
-}
-
-.content-sidebar-wrap {
-  max-width: 960px;
+  max-width: 100%;
   margin: 0 auto;
+  padding: 0 20px;
+}
+@media (min-width: 1000px) {
+  .site-inner {
+    max-width: 960px;
+  }
 }
 @media (min-width: 1200px) {
-  .content-sidebar-wrap {
+  .site-inner {
     max-width: 1160px;
   }
 }
 
 .full-width-content .content-sidebar-wrap {
   max-width: 100%;
+}
+
+.content {
+  float: right;
+  width: 100%;
+}
+@media (min-width: 1000px) {
+  .content {
+    width: 620px;
+  }
+}
+@media (min-width: 1200px) {
+  .content {
+    width: 760px;
+  }
+}
+
+.full-width-content .content {
+  width: 100%;
+}
+
+.content-sidebar .content {
+  float: left;
+}
+
+.entry-header,
+.entry-footer,
+.archive-title,
+.entry-comments,
+.comment-respond {
+  max-width: 760px;
+  margin: 0 auto;
+}
+@media (min-width: 1000px) {
+  .entry-header,
+  .entry-footer,
+  .archive-title,
+  .entry-comments,
+  .comment-respond  {
+    max-width: none;
+  }
+}
+
+@media (min-width: 1000px) {
+  .full-width-content .entry-header,
+  .full-width-content .entry-footer,
+  .full-width-content .archive-title  {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .full-width-content .entry-header,
+  .full-width-content .entry-footer,
+  .full-width-content .archive-title  {
+    max-width: 1160px;
+  }
 }
 
 /* wrap used in site-header, entry-header, entry-content, entry-footer, site-footer and sidebar. */

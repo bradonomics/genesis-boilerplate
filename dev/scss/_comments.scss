@@ -1,0 +1,61 @@
+/* Comments
+-------------------------------------------------- */
+
+.comment-respond,
+.entry-comments,
+.entry-pings {
+	margin-bottom: 100px;
+}
+
+p.comment-meta,
+.entry-comments .comment,
+.entry-comments .comment-reply {
+	margin-bottom: 40px;
+}
+
+.comment-header {
+	font-size: 20px;
+}
+
+.entry-comments .comment {
+	border-bottom: 1px solid #000;
+}
+
+.comment-content,
+.entry-comments .comment {
+	clear: both;
+}
+
+p.form-submit,
+.entry-comments .children .comment,
+.entry-comments .comment-author {
+	margin: 0;
+}
+
+.entry-comments .children .comment {
+	border: none;
+}
+
+.comment-respond label {
+	display: block;
+	font-weight: 800;
+}
+
+.comment-respond input[type="email"],
+.comment-respond input[type="text"],
+.comment-respond input[type="url"] {
+	width: 100%;
+}
+
+.comment-list li,
+.ping-list li {
+	list-style-type: none;
+}
+
+.entry-comments ul.children {
+	margin-left: 40px;
+}
+
+.ping-list .reply {
+	display: none;
+}
