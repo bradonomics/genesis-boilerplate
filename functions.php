@@ -10,14 +10,6 @@ define( 'CHILD_THEME_NAME', __( 'Genesis Boilerplate', 'geneplate' ) );
 define( 'CHILD_THEME_URL', 'http://github.com/bradonomics/genesis-boilerplate/' );
 define( 'CHILD_THEME_VERSION', '0.0.0' );
 
-/*
- * Versioning makes little sense with software like a
- * boilerplate theme. I started this project with a
- * version number but have decided to stop keeping
- * track; hence the 0.0.0 version number above. Make
- * sure you pull the latest from the github repo before
- * you start a new project.
- */
 
 /************* THEME SUPPORT *************/
 

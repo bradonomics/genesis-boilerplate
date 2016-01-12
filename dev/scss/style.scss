@@ -1,0 +1,65 @@
+/*!
+Theme Name: Genesis Boilerplate
+Theme URI: http://github.com/bradonomics/genesis-boilerplate
+Description: Boilerplate code for Genesis child themes.
+Author: Brad West
+Author URI: http://bradonomics.com/
+Version: 0.0.0
+
+Template: genesis
+*/
+
+/* Variables
+-------------------------------------------------- */
+
+$body-font: Raleway, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+$link-color: #1EAEDB;
+$link-color-hover: #0FA0CE;
+
+$button-text-color: #fff;
+$button-background-color: #33C3F0;
+
+$button-text-color-hover: #fff;
+$button-background-color-hover: #1EAEDB;
+
+/* Fonts
+-------------------------------------------------- */
+// Use this area for self-hosted web fonts
+// @import "fonts/all";
+
+/* Import partials from sass directory
+-------------------------------------------------- */
+@import
+  "normalize",
+  "base",
+  "structure",
+  "grid",
+  "header",
+  "navigation",
+  "inner",
+  "footer",
+  "custom"
+;
+
+/* Media Queries
+-------------------------------------------------- */
+/* Larger than mobile */
+// @media (min-width: 400px) {
+// }
+
+/* Larger than phablet (point when 2-column grid becomes active) */
+// @media (min-width: 550px) {
+// }
+
+/* Larger than tablet (point when 3-column grid becomes active) */
+// @media (min-width: 750px) {
+// }
+
+/* Larger than desktop (point when 4-column grid becomes active) */
+// @media (min-width: 1000px) {
+// }
+
+/* Larger than Desktop HD */
+// @media (min-width: 1200px) {
+// }

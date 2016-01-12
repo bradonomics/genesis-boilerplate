@@ -1,0 +1,61 @@
+/* Structure and Layout
+-------------------------------------------------- */
+.site-container {
+  display: -webkit-box; /* old prefixed for webkit */
+  display: -ms-flexbox; /* inbetween prefixed for ie */
+  display: -webkit-flex; /* new prefixed for webkit */
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+}
+
+.site-inner {
+  -webkit-box-flex: 3;
+  -webkit-flex: 3 0 auto;
+      -ms-flex: 3 0 auto;
+          flex: 3 0 auto;
+}
+
+.content-sidebar-wrap {
+  max-width: 960px;
+  margin: 0 auto;
+}
+@media (min-width: 1200px) {
+  .content-sidebar-wrap {
+    max-width: 1160px;
+  }
+}
+
+.full-width-content .content-sidebar-wrap {
+  max-width: 100%;
+}
+
+/* wrap used in site-header, entry-header, entry-content, entry-footer, site-footer and sidebar. */
+.wrap {
+  margin: 0 auto;
+  padding: 0 20px;
+}
+@media (min-width: 750px) {
+  .wrap {
+    max-width: 760px;
+  }
+}
+@media (min-width: 1000px) {
+  .wrap {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .wrap {
+    max-width: 1160px;
+  }
+}
+
+/* wrap inside entry-content; mostly for iframe embeds */
+.entry-content .wrap {
+  max-width: 760px;
+}
