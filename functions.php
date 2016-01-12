@@ -16,20 +16,20 @@ define( 'CHILD_THEME_VERSION', '0.0.0' );
 //* Include Google fonts, responsive menu icon and dashicons and remove comment-reply script.
 add_action( 'wp_enqueue_scripts', 'geneplate_enqueue_scripts' );
 function geneplate_enqueue_scripts() {
-  wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Railway', array(), CHILD_THEME_VERSION );
-  wp_enqueue_style( 'dashicons' );
+    wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Railway', array(), CHILD_THEME_VERSION );
+    wp_enqueue_style( 'dashicons' );
 
-  wp_dequeue_script ( 'comment-reply' );
+    wp_dequeue_script ( 'comment-reply' );
 
-  //* Move jQuery before closing body tag.
-  wp_deregister_script( 'jquery' );
-  wp_enqueue_script( 'jquery', includes_url( '/js/jquery/jquery.js' ), false, NULL, true );
+    //* Move jQuery before closing body tag.
+    wp_deregister_script( 'jquery' );
+    wp_enqueue_script( 'jquery', includes_url( '/js/jquery/jquery.js' ), false, NULL, true );
 
-  //* To use jQuery Migrate uncomment the wp_register_script & wp_enqueue_script lines.
-  wp_deregister_script( 'jquery-ui' );
-//  wp_enqueue_script( 'jquery-ui', includes_url( '/js/jquery/jquery-migrate.min.js' ), false, NULL, true );
+    //* To use jQuery Migrate uncomment the wp_register_script & wp_enqueue_script lines.
+    wp_deregister_script( 'jquery-ui' );
+  //  wp_enqueue_script( 'jquery-ui', includes_url( '/js/jquery/jquery-migrate.min.js' ), false, NULL, true );
 
-  wp_enqueue_script( 'responsive-menu-icon', get_bloginfo( 'stylesheet_directory' ) . '/js/responsive-menu.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
+    wp_enqueue_script( 'responsive-menu-icon', get_bloginfo( 'stylesheet_directory' ) . '/js/responsive-menu.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
 }
 
 //* Move child theme stylesheet to the end of the line so it takes precedence over plugin stylesheets.
@@ -88,12 +88,13 @@ unregister_sidebar( 'header-right' );
 
 //* Remove unused Genesis Widgets
   //* Add a comment to block or remove the line to add widgets you'd like to use.
-add_action( 'widgets_init', 'remove_genesis_widgets', 20 );
-function remove_genesis_widgets() {
-  unregister_widget( 'Genesis_Featured_Page' );
-  unregister_widget( 'Genesis_Featured_Post' );
-  unregister_widget( 'Genesis_User_Profile_Widget' );
-}
+// add_action( 'widgets_init', 'remove_genesis_widgets', 20 );
+// function remove_genesis_widgets() {
+    unregister_widget( 'Genesis_Featured_Page' );
+    unregister_widget( 'Genesis_Featured_Post' );
+    unregister_widget( 'Genesis_User_Profile_Widget' );
+// }
+// TODO: Check that these widget are unregistered without the function
 
 
 /************* HEAD *************/
@@ -114,15 +115,15 @@ remove_action( 'wp_head', 'rsd_link' );
 add_filter('the_content', 'iframe_responsive_wrapper');
 function iframe_responsive_wrapper($content) {
 
-  $pattern = '~<iframe.*</iframe>|<embed.*</embed>~';
-  preg_match_all($pattern, $content, $matches);
+    $pattern = '~<iframe.*</iframe>|<embed.*</embed>~';
+    preg_match_all($pattern, $content, $matches);
 
-  foreach ($matches[0] as $match) {
-    $wrappedframe = '<div class="wrap"><div class="iframe-embed">' . $match . '</div></div>';
-    $content = str_replace($match, $wrappedframe, $content);
-  }
+    foreach ($matches[0] as $match) {
+        $wrappedframe = '<div class="wrap"><div class="iframe-embed">' . $match . '</div></div>';
+        $content = str_replace($match, $wrappedframe, $content);
+    }
 
-  return $content;
+    return $content;
 
 }
 
@@ -130,15 +131,15 @@ function iframe_responsive_wrapper($content) {
 add_filter('the_content', 'table_responsive_wrapper');
 function table_responsive_wrapper($content) {
 
-  $pattern = '/<table.*?<\/table>/si';
-  preg_match_all($pattern, $content, $matches);
+    $pattern = '/<table.*?<\/table>/si';
+    preg_match_all($pattern, $content, $matches);
 
-  foreach ($matches[0] as $match) {
-    $wrappedframe = '<div class="wrap">' . $match . '</div>';
-    $content = str_replace($match, $wrappedframe, $content);
-  }
+    foreach ($matches[0] as $match) {
+        $wrappedframe = '<div class="wrap">' . $match . '</div>';
+        $content = str_replace($match, $wrappedframe, $content);
+    }
 
-  return $content;
+    return $content;
 
 }
 
@@ -152,10 +153,10 @@ function table_responsive_wrapper($content) {
 add_action( 'genesis_before_sidebar_widget_area', 'sidebar_wrap_open' );
 add_action( 'genesis_after_sidebar_widget_area', 'sidebar_wrap_close' );
 function sidebar_wrap_open() {
-  echo '<div class="wrap">';
+    echo '<div class="wrap">';
 }
 function sidebar_wrap_close() {
-  echo '</div>';
+    echo '</div>';
 }
 
 
@@ -171,5 +172,5 @@ function sidebar_wrap_close() {
 remove_action( 'genesis_footer', 'genesis_do_footer' );
 add_action( 'genesis_footer', 'geneplate_footer' );
 function geneplate_footer() { ?>
-  <p><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a> &copy; <?php echo date('Y') ?> &middot; <a href="http://github.com/bradonomics/genesis-boilerplate/" rel="nofollow">Built using Genesis Boilerplate</a></p><?php
+    <p><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a> &copy; <?php echo date('Y') ?> &middot; <a href="http://github.com/bradonomics/genesis-boilerplate/" rel="nofollow">Built using Genesis Boilerplate</a></p><?php
 }
