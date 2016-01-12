@@ -9,10 +9,11 @@ var gulp         = require('gulp'),
     minifycss    = require('gulp-minify-css'),
     concat       = require('gulp-concat'),
     uglify       = require('gulp-uglify'),
+    rename       = require('gulp-rename'),
     browserSync  = require('browser-sync');
 
 
-//* Setup new project directories with "npm install --save-dev gulp gulp-ruby-sass gulp-autoprefixer gulp-minify-css gulp-concat gulp-uglify browser-sync"
+//* Setup new project directories with "npm install --save-dev gulp gulp-ruby-sass gulp-autoprefixer gulp-minify-css gulp-concat gulp-uglify gulp-rename browser-sync"
 
 
 //* Styles
@@ -64,8 +65,7 @@ gulp.task('browser-sync', function() {
 
 
 // Watch Task (default)
-gulp.task('default', ['css', 'themejs', 'images', 'browser-sync'], function() {
-  gulp.watch('./dev/images/*', ['images', browserSync.reload]);
+gulp.task('default', ['css', 'themejs', 'browser-sync'], function() {
   gulp.watch('./dev/scss/*.scss', ['css', browserSync.reload]);
   gulp.watch('./dev/js/*.js', ['themejs', browserSync.reload]);
 });
