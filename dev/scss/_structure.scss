@@ -33,10 +33,6 @@
   }
 }
 
-.full-width-content .content-sidebar-wrap {
-  max-width: 100%;
-}
-
 .content {
   float: right;
   width: 100%;
@@ -60,6 +56,7 @@
   float: left;
 }
 
+.title-area,
 .entry-header,
 .entry-footer,
 .archive-title,
@@ -69,6 +66,7 @@
   margin: 0 auto;
 }
 @media (min-width: 1000px) {
+  .title-area,
   .entry-header,
   .entry-footer,
   .archive-title,
@@ -78,22 +76,6 @@
   }
 }
 
-@media (min-width: 1000px) {
-  .full-width-content .entry-header,
-  .full-width-content .entry-footer,
-  .full-width-content .archive-title  {
-    max-width: 960px;
-  }
-}
-@media (min-width: 1200px) {
-  .full-width-content .entry-header,
-  .full-width-content .entry-footer,
-  .full-width-content .archive-title  {
-    max-width: 1160px;
-  }
-}
-
-/* wrap used in site-header, entry-header, entry-content, entry-footer, site-footer and sidebar. */
 .wrap {
   margin: 0 auto;
   padding: 0 20px;
