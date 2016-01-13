@@ -1,5 +1,5 @@
 //* Project name
-// var projectName = geneplate;
+var projectName = "geneplate";
 
 
 //* Plugins
@@ -58,8 +58,7 @@ gulp.task('browser-sync', function() {
     './*.php'
   ];
   browserSync.init(files, {
-    // proxy: "local.dev/" + projectName
-    proxy: "local.dev/geneplate"
+    proxy: "local.dev/" + projectName
   });
 });
 
