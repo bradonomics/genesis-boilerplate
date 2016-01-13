@@ -37,7 +37,7 @@ gulp.task('vendorjs', function() {
       basename: "vendor",
       suffix: '.min'
     }))
-    .pipe(gulp.dest('./js/'));
+    .pipe(gulp.dest('./js'));
 });
 
 gulp.task('themejs', function() {
@@ -45,7 +45,7 @@ gulp.task('themejs', function() {
     .pipe(concat('main.js'))
     .pipe(uglify())
     .pipe(rename({
-      basename: "main",
+      basename: "theme",
       suffix: '.min'
     }))
     .pipe(gulp.dest('./js'));
