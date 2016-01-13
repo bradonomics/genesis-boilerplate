@@ -1,9 +1,11 @@
 # Genesis Boilerplate
-Genesis boilerplate is a starter kit for Genesis child themes.
+Genesis boilerplate is a starter kit for Genesis child themes. It uses the most common CSS and PHP functions I find myself using when creating new themes.
 
-Skeleton was the original CSS framework, although many changes have been made in the meanwhile. Check out <http://getskeleton.com> for documentation and details about the Skeleton CSS framework.
+The repo is setup with a /dev directory and a gulpfile if you want to use [Gulp](http://gulpjs.com/). If not, you'll need to manually move all the CSS from the .scss files to a styles.css file in the root directory. (A blog post is coming on my process for building child themes which should help explain this process.)
 
-Check out <http://studiopress.com> for documentation and details about the Genesis Framework.
+I've used Skeleton CSS as a base, although many changes have been made to the original. Check out <http://getskeleton.com> for documentation and details about the Skeleton CSS framework.
+
+For the Genesis Framework, check out <http://studiopress.com> for documentation and details.
 
 ## Getting Started
 
@@ -15,7 +17,7 @@ The download includes a rewrite of [Skeleton CSS](http://getskeleton.com) to use
 
 If you're working with a designer there are also HTML samples so the designer will know what CSS classes to use and have an HTML template.
 
-You'll want to add a [screenshot.png file](http://codex.wordpress.org/Theme_Development#Screenshot) so something will show in the Wordpress Dashboard. You'll probably want to add an /images directory. After this, zip the styles.css, funtions.php with these files and directories and upload the new theme to Wordpress. (If you don't have Genesis installed, this upload won't work. Check the documentation on [StudioPress.com](http://studiopress.com) for more info.)
+You'll want to add a [screenshot.png file](http://codex.wordpress.org/Theme_Development#Screenshot) so something will show in the Wordpress Dashboard. After this, zip the styles.css, funtions.php with these files and directories and upload the new theme to Wordpress. (If you don't have Genesis installed, this upload won't work. Check the documentation on [StudioPress.com](http://studiopress.com) for more info.)
 
 ## License
 
