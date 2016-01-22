@@ -6,19 +6,21 @@ var projectName = "geneplate";
 var gulp         = require('gulp'),
     sass         = require('gulp-ruby-sass'),
     prefix       = require('gulp-autoprefixer'),
-    minifycss    = require('gulp-minify-css'),
+    minifycss    = require('gulp-cssnano'),
     concat       = require('gulp-concat'),
     uglify       = require('gulp-uglify'),
     rename       = require('gulp-rename'),
     browserSync  = require('browser-sync');
 
 
-//* Setup new project directories with "npm install --save-dev gulp gulp-ruby-sass gulp-autoprefixer gulp-minify-css gulp-concat gulp-uglify gulp-rename browser-sync"
+//* Setup new WordPress project with "npm install --save-dev gulp gulp-ruby-sass gulp-autoprefixer gulp-cssnano gulp-concat gulp-uglify gulp-rename browser-sync"
+
+//* Setup new PSD to HTML/CSS project with "npm install --save-dev gulp gulp-ruby-sass gulp-autoprefixer gulp-cssnano browser-sync"
 
 
 //* Styles
 gulp.task('css', function() {
-  return sass('./dev/scss/*.scss')
+  return sass('./_scss/*.scss')
     .on('error', function(err) {
       console.error('Error! Something went wrong compiling your SCSS files.', err.message);
     })
@@ -30,7 +32,7 @@ gulp.task('css', function() {
 
 //* Scripts
 gulp.task('vendorjs', function() {
-  return gulp.src('./dev/js/vendor/*.js')
+  return gulp.src('./_js/vendor/*.js')
     .pipe(concat('vendor.js'))
     .pipe(uglify())
     .pipe(rename({
@@ -63,8 +65,18 @@ gulp.task('browser-sync', function() {
 });
 
 
+//* Browser Sync for Sass
+gulp.task('watch', ['css'], function() {
+  browserSync.init({
+    server: "./"
+  });
+  gulp.watch("./_scss/*.scss", ['css', browserSync.reload]);
+  gulp.watch("./*.html").on('change', browserSync.reload);
+});
+
+
 // Watch Task (default)
 gulp.task('default', ['css', 'themejs', 'browser-sync'], function() {
-  gulp.watch('./dev/scss/*.scss', ['css', browserSync.reload]);
-  gulp.watch('./dev/js/*.js', ['themejs', browserSync.reload]);
+  gulp.watch('./_scss/*.scss', ['css', browserSync.reload]);
+  gulp.watch('./_js/*.js', ['themejs', browserSync.reload]);
 });
