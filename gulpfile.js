@@ -16,6 +16,7 @@ var gulp         = require('gulp'),
 //* Setup new WordPress project with "npm install --save-dev gulp gulp-ruby-sass gulp-autoprefixer gulp-cssnano gulp-concat gulp-uglify gulp-rename browser-sync"
 
 //* Setup new PSD to HTML/CSS project with "npm install --save-dev gulp gulp-ruby-sass gulp-autoprefixer gulp-cssnano browser-sync"
+//* If you need to work on JavaScript during the PSD extraction, use the "WordPress project" setup above.
 
 
 //* Styles
