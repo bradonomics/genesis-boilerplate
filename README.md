@@ -1,7 +1,7 @@
 # Genesis Boilerplate
 Genesis boilerplate is a starter kit for Genesis child themes. It uses the most common CSS and PHP functions I find myself using when creating new themes.
 
-The repo is setup with _js and _scss directories and a gulpfile if you want to use [Gulp](http://gulpjs.com/). If not, you'll need to manually move all the CSS from the .scss files to a styles.css file in the root directory.
+The repo is setup with `/dev` directory and a gulpfile if you want to use [Gulp](http://gulpjs.com/). The `/dev` directory is where your Sass and pre processed JavaScript will live. If you prefer not to use Sass or Gulp, you'll need to manually move all the CSS from the .scss files to a styles.css file in the root directory.
 
 (A blog post is coming on my process for building child themes which should help explain this process.)
 

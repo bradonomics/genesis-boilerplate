@@ -20,7 +20,7 @@ var gulp         = require('gulp'),
 
 //* Styles
 gulp.task('css', function() {
-  return sass('./_scss/*.scss')
+  return sass('./dev/scss/*.scss')
     .on('error', function(err) {
       console.error('Error! Something went wrong compiling your SCSS files.', err.message);
     })
@@ -32,7 +32,7 @@ gulp.task('css', function() {
 
 //* Scripts
 gulp.task('vendorjs', function() {
-  return gulp.src('./_js/vendor/*.js')
+  return gulp.src('./dev/js/vendor/*.js')
     .pipe(concat('vendor.js'))
     .pipe(uglify())
     .pipe(rename({
@@ -70,13 +70,13 @@ gulp.task('watch', ['css'], function() {
   browserSync.init({
     server: "./"
   });
-  gulp.watch("./_scss/*.scss", ['css', browserSync.reload]);
+  gulp.watch("./dev/scss/*.scss", ['css', browserSync.reload]);
   gulp.watch("./*.html").on('change', browserSync.reload);
 });
 
 
 // Watch Task (default)
 gulp.task('default', ['css', 'themejs', 'browser-sync'], function() {
-  gulp.watch('./_scss/*.scss', ['css', browserSync.reload]);
-  gulp.watch('./_js/*.js', ['themejs', browserSync.reload]);
+  gulp.watch('./dev/scss/*.scss', ['css', browserSync.reload]);
+  gulp.watch('./dev/js/*.js', ['themejs', browserSync.reload]);
 });
