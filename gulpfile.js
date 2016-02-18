@@ -4,7 +4,7 @@ var projectName = "geneplate";
 
 //* Plugins
 var gulp         = require('gulp'),
-    sass         = require('gulp-ruby-sass'),
+    sass         = require('gulp-sass'),
     prefix       = require('gulp-autoprefixer'),
     minifycss    = require('gulp-cssnano'),
     concat       = require('gulp-concat'),
@@ -12,19 +12,23 @@ var gulp         = require('gulp'),
     rename       = require('gulp-rename'),
     browserSync  = require('browser-sync');
 
+//* Sass Options
+var sassOptions = {
+  errLogToConsole: true,
+  outputStyle: 'expanded'
+};
 
-//* Setup new WordPress project with "npm install --save-dev gulp gulp-ruby-sass gulp-autoprefixer gulp-cssnano gulp-concat gulp-uglify gulp-rename browser-sync"
 
-//* Setup new PSD to HTML/CSS project with "npm install --save-dev gulp gulp-ruby-sass gulp-autoprefixer gulp-cssnano browser-sync"
+//* Setup new WordPress project with "npm install --save-dev gulp gulp-sass gulp-autoprefixer gulp-cssnano gulp-concat gulp-uglify gulp-rename browser-sync"
+
+//* Setup new PSD to HTML/CSS project with "npm install --save-dev gulp gulp-sass gulp-autoprefixer gulp-cssnano browser-sync"
 //* If you need to work on JavaScript during the PSD extraction, use the "WordPress project" setup above.
 
 
 //* Styles
-gulp.task('css', function() {
-  return sass('./dev/scss/*.scss')
-    .on('error', function(err) {
-      console.error('Error! Something went wrong compiling your SCSS files.', err.message);
-    })
+gulp.task('css', function () {
+  return gulp.src('./dev/scss/*.scss')
+    .pipe(sass(sassOptions).on('error', sass.logError))
     .pipe(prefix())
     .pipe(minifycss())
     .pipe(gulp.dest('./'))
