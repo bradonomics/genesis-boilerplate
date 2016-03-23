@@ -31,7 +31,7 @@ gulp.task('css', function () {
     .pipe(sass(sassOptions).on('error', sass.logError))
     .pipe(prefix())
     .pipe(minifycss())
-    .pipe(gulp.dest('./'))
+    .pipe(gulp.dest('./'));
 });
 
 
