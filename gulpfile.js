@@ -19,10 +19,15 @@ var sassOptions = {
 };
 
 
-//* Setup new WordPress project with "npm install --save-dev gulp gulp-sass gulp-autoprefixer gulp-cssnano gulp-concat gulp-uglify gulp-rename browser-sync"
+/*  Setup new WordPress project type this in the terminal:
+ *  1. `npm init`
+ *  2. `npm install --save-dev gulp gulp-sass gulp-autoprefixer gulp-cssnano gulp-concat gulp-uglify gulp-rename  browser-sync`
+ */
 
-//* Setup new PSD to HTML/CSS project with "npm install --save-dev gulp gulp-sass gulp-autoprefixer gulp-cssnano browser-sync"
-//* If you need to work on JavaScript during the PSD extraction, use the "WordPress project" setup above.
+/*  Setup new PSD to HTML/CSS project type this in the terminal:
+ *  `npm install --save-dev gulp gulp-sass gulp-autoprefixer gulp-cssnano browser-sync`
+ *  If you need to work on JavaScript during the PSD extraction, use the "WordPress project" setup above.
+ */
 
 
 //* Styles
