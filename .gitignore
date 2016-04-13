@@ -1,10 +1,11 @@
-#WordPress
+# WordPress
 /style.css
 /js/theme.min.js
 
 # Gulp
 node_modules
 .sass-cache
+*.css.map
 package.json
 
 # Compiled source
@@ -14,6 +15,10 @@ package.json
 *.exe
 *.o
 *.so
+*.cab
+*.msi
+*.msm
+*.msp
 
 # Compressed Packages
 *.7z
@@ -30,7 +35,7 @@ package.json
 *.sql
 *.sqlite
 
-# Mac OS generated files
+# OS generated files
 .DS_Store
 .DS_Store?
 ._*
@@ -38,3 +43,18 @@ package.json
 .Trashes
 ehthumbs.db
 Thumbs.db
+.fuse_hidden*
+.Trash-*
+.AppleDouble
+.AppleDB
+.AppleDesktop
+.LSOverride
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.VolumeIcon.icns
+.apdisk
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
