@@ -27,7 +27,7 @@ function geneplate_enqueue_scripts() {
 
     //* To use jQuery Migrate uncomment the wp_register_script & wp_enqueue_script lines.
     wp_deregister_script( 'jquery-ui' );
-  //  wp_enqueue_script( 'jquery-ui', includes_url( '/js/jquery/jquery-migrate.min.js' ), false, NULL, true );
+    // wp_enqueue_script( 'jquery-ui', includes_url( '/js/jquery/jquery-migrate.min.js' ), false, NULL, true );
 
     wp_enqueue_script( 'responsive-menu-icon', get_bloginfo( 'stylesheet_directory' ) . '/js/responsive-menu.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
 }
@@ -47,9 +47,9 @@ add_theme_support( 'genesis-responsive-viewport' );
 //* Add support for structural wraps (max-width has been added to most content-entry elements to allow for full-width images on any page or post. If you don't need full-width images, you can add structural wrap in site-inner.)
 add_theme_support( 'genesis-structural-wraps', array(
     'header',
-//  'nav',
-//  'subnav',
-//  'site-inner',
+    // 'nav',
+    // 'subnav',
+    // 'site-inner',
     'footer-widgets',
     'footer'
 ) );
@@ -96,7 +96,6 @@ unregister_sidebar( 'header-right' );
     unregister_widget( 'Genesis_Featured_Post' );
     unregister_widget( 'Genesis_User_Profile_Widget' );
 // }
-// TODO: Check that these widget are unregistered without the function
 
 
 /************* HEAD *************/
@@ -129,7 +128,7 @@ function iframe_responsive_wrapper($content) {
 
 }
 
-//* Add wrap divs around tables.
+//* Add wrap around tables.
 add_filter('the_content', 'table_responsive_wrapper');
 function table_responsive_wrapper($content) {
 
