@@ -32,6 +32,8 @@ function geneplate_enqueue_scripts() {
     wp_enqueue_script( 'responsive-menu-icon', get_bloginfo( 'stylesheet_directory' ) . '/js/responsive-menu.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
 }
 
+//* TODO: Remove web fonts from local builds: http://dev-notes.eu/2016/04/remove-open-sans-wordpress-admin/
+
 //* Move child theme stylesheet to the end of the line so it takes precedence over plugin stylesheets.
 remove_action( 'genesis_meta', 'genesis_load_stylesheet' );
 add_action( 'wp_enqueue_scripts', 'genesis_enqueue_main_stylesheet', 999 );
