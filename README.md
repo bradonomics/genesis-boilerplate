@@ -3,7 +3,7 @@ Genesis boilerplate is a starter kit for Genesis child themes. It uses the most 
 
 The repo is setup with `/dev` directory and a gulpfile if you want to use [Gulp](http://gulpjs.com/). The `/dev` directory is where your Sass and pre processed JavaScript will live. If you prefer not to use Sass or Gulp, you'll need to manually move all the CSS from the .scss files to a styles.css file in the root directory.
 
-(A blog post is coming on my process for building child themes which should help explain this process.)
+(A blog post about my process can be found here: bradonomics.com/genesis-boilerplate/)
 
 I've used Skeleton CSS as a base, although many changes have been made to the original. Check out <http://getskeleton.com> for documentation and details about the Skeleton CSS framework.
 
