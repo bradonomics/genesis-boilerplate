@@ -32,7 +32,12 @@ function geneplate_enqueue_scripts() {
     wp_enqueue_script( 'responsive-menu-icon', get_bloginfo( 'stylesheet_directory' ) . '/js/responsive-menu.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
 }
 
-//* TODO: Remove web fonts from local builds: http://dev-notes.eu/2016/04/remove-open-sans-wordpress-admin/
+//* Remove web fonts from local builds: http://dev-notes.eu/2016/04/remove-open-sans-wordpress-admin/
+add_action( 'admin_enqueue_scripts', 'remove_open_sans' );
+function remove_open_sans() {
+    wp_deregister_style( 'open-sans' );
+    wp_register_style( 'open-sans', false );
+}
 
 //* Move child theme stylesheet to the end of the line so it takes precedence over plugin stylesheets.
 remove_action( 'genesis_meta', 'genesis_load_stylesheet' );
