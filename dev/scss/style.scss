@@ -25,7 +25,7 @@ $button-background-color-hover: #1EAEDB;
 
 /* Fonts
 -------------------------------------------------- */
-// Use this area for self-hosted web fonts
+// Use this area for self-hosted fonts
 // @import "fonts/all";
 
 /* Import partials from sass directory
@@ -38,6 +38,7 @@ $button-background-color-hover: #1EAEDB;
   "header",
   "navigation",
   "inner",
+  "pagination",
   "sidebars",
   "comments",
   "footer",
