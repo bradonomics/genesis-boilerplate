@@ -23,6 +23,29 @@
   max-width: 760px;
 }
 
+  /*
+
+  TODO: Reintroduce wrap to the theme and use the following to allow full-width images inside posts or pages:
+
+  .full-width {
+    clear: both;
+    left: 50%;
+    margin-left: -100vw;
+    margin-right: -100vw;
+    margin-top: 60px;
+    max-width: 100vw;
+    position: relative;
+    -webkit-transform: translateX(50%);
+       -moz-transform: translateX(50%);
+        -ms-transform: translateX(50%);
+         -o-transform: translateX(50%);
+            transform: translateX(50%);
+    }
+
+  See a demo here: https://demo.xfrontend.com/snowbird/mountain-winter-landscape-in-austria/
+
+  */
+
 
 /* Entry Meta
 -------------------------------------------------- */
