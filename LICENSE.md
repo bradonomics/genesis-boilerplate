@@ -23,11 +23,6 @@ and
   StudioPress - http://studiopress.com<br>
   Copyright (C) by the contributors
 
-and
-
-  Skeleton - http://getskeleton.com<br>
-  Copyright (C) 2011-2014 Dave Gamache
-
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
                     GNU GENERAL PUBLIC LICENSE

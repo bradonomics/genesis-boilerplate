@@ -10,10 +10,10 @@
 .genesis-nav-menu {
   display: none;
   margin: 0 auto;
-  clear: both;
   font-size: 16px;
   line-height: 1;
   text-align: center;
+  clear: both;
 }
 @media (min-width: 550px) {
   .genesis-nav-menu {
@@ -22,8 +22,8 @@
 }
 @media (min-width: 750px) {
   .genesis-nav-menu {
-    text-align: left;
     max-width: 760px;
+    text-align: left;
   }
 }
 @media (min-width: 1000px) {
@@ -63,15 +63,15 @@
 }
 @media (min-width: 550px) {
   .genesis-nav-menu .menu-item:hover > .sub-menu {
-    margin-left: -20px;
     margin-top: -12px;
+    margin-left: -20px;
   }
 }
 
 .genesis-nav-menu a {
-  color: #333;
   display: block;
   padding: 30px 24px;
+  color: #333;
 }
 @media (min-width: 750px) {
   .genesis-nav-menu a {
@@ -80,18 +80,14 @@
 }
 @media (min-width: 1000px) {
   .genesis-nav-menu a {
-    padding-bottom: 29px;
     padding-top: 29px;
+    padding-bottom: 29px;
   }
 }
 
 .genesis-nav-menu a:hover,
 .genesis-nav-menu .current-menu-item > a {
-  color: #1EAEDB;
-}
-
-.genesis-nav-menu .menu-item:hover {
-  position: static;
+  color: $link-color;
 }
 
 .genesis-nav-menu .sub-menu {
@@ -128,7 +124,7 @@
 }
 
 .genesis-nav-menu .sub-menu a:hover {
-  color: #1EAEDB;
+  color: $link-color;
 }
 
 

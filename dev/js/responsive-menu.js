@@ -1,38 +1,173 @@
-jQuery( function ( $ ) {
+(function(document, $, undefined) {
 
-	$( '.nav-primary .genesis-nav-menu' ).addClass( 'responsive-menu' ).before( '<div class="responsive-menu-icon"></div>' );
+  // $( 'body' ).addClass( 'js' );
 
-	$( '.responsive-menu-icon' ).click( function () {
-		$( this ).next( '.nav-primary .genesis-nav-menu' ).slideToggle();
-	});
+  'use strict';
 
-	$( '.responsive-menu' ).on( 'click', '.menu-item', function ( event ) {
-		if ( event.target !== this )
-			return;
-		$( this ).find( '.sub-menu:first' ).slideToggle( function () {
-			$( this ).parent().toggleClass( 'menu-open' );
-		});
-	});
+  var geneplate           = {},
+      mainMenuButtonClass = 'menu-toggle',
+      subMenuButtonClass  = 'sub-menu-toggle';
 
-	setupMenus();
+  geneplate.init = function() {
+    var toggleButtons = {
+      menu: $('<button />', {
+          'class': mainMenuButtonClass,
+          'aria-expanded': false,
+          'aria-pressed': false,
+          'role': 'button'
+        })
+        .append(geneplate.params.mainMenu),
+      submenu: $('<button />', {
+          'class': subMenuButtonClass,
+          'aria-expanded': false,
+          'aria-pressed': false,
+          'role': 'button'
+        })
+        .append($('<span />', {
+          'class': 'screen-reader-text',
+          text: geneplate.params.subMenu
+        }))
+    };
+    $('.nav-primary').before(toggleButtons.menu); // add the main nav buttons
+    $('nav .sub-menu').before(toggleButtons.submenu); // add the submenu nav buttons
+    $('.' + mainMenuButtonClass).each(_addClassID);
+    $(window).on('resize.geneplate', _doResize).triggerHandler('resize.geneplate');
+    $('.' + mainMenuButtonClass).on('click.geneplate-mainbutton', _mainmenuToggle);
+    $('.' + subMenuButtonClass).on('click.geneplate-subbutton', _submenuToggle);
+  };
 
-	$( window ).resize( function () {
-		setupMenus();
-	});
+  // add nav class and ID to related button
+  function _addClassID() {
+    var $this = $(this),
+      nav = $this.next('nav'),
+      id = 'class';
+    $this.addClass($(nav).attr('class'));
+    if ($(nav).attr('id')) {
+      id = 'id';
+    }
+    $this.attr('id', 'mobile-' + $(nav).attr(id));
+  }
 
-	function setupMenus() {
-		if ( window.innerWidth <= 549 ) {
-			$( 'ul.menu-secondary > li' ).addClass( 'moved-item' ); // tag moved items so we can move them back
-			$( 'ul.menu-secondary > li' ).appendTo( 'ul.menu-primary' );
-			$( '.nav-secondary' ).hide();
-		}
+  // Change Skiplinks and Superfish
+  function _doResize() {
+    var buttons = $('button[id^=mobile-]').attr('id');
+    if (typeof buttons === 'undefined') {
+      return;
+    }
+    _superfishToggle(buttons);
+    _changeSkipLink(buttons);
+    _maybeClose(buttons);
+  }
 
-		if ( window.innerWidth > 549 ) {
-			$( '.nav-primary .genesis-nav-menu, nav .sub-menu' ).removeAttr( 'style' );
-			$( '.responsive-menu > .menu-item' ).removeClass( 'menu-open' );
-			$( '.nav-secondary' ).show();
-			$( 'ul.menu-primary > li.moved-item' ).appendTo( 'ul.menu-secondary' );
-		}
-	}
+  /**
+   * action to happen when the main menu button is clicked
+   */
+  function _mainmenuToggle() {
+    var $this = $(this);
+    _toggleAria($this, 'aria-pressed');
+    _toggleAria($this, 'aria-expanded');
+    $this.toggleClass('activated');
+    $('nav.nav-primary').slideToggle('fast'); //changed to .nav-primary since we're not toggling .nav-secondary
+  }
 
-});
+  /**
+   * action for submenu toggles
+   */
+  function _submenuToggle() {
+
+    var $this = $(this),
+      others = $this.closest('.menu-item').siblings();
+    _toggleAria($this, 'aria-pressed');
+    _toggleAria($this, 'aria-expanded');
+    $this.toggleClass('activated');
+    $this.next('.sub-menu').slideToggle('fast');
+
+    others.find('.' + subMenuButtonClass).removeClass('activated').attr('aria-pressed', 'false');
+    others.find('.sub-menu').slideUp('fast');
+
+  }
+
+  /**
+   * activate/deactivate superfish
+   */
+  function _superfishToggle(buttons) {
+    if (typeof $('.js-superfish').superfish !== 'function') {
+      return;
+    }
+    if ('none' === _getDisplayValue(buttons)) {
+      $('.js-superfish').superfish({
+        'delay': 100,
+        'animation': {
+          'opacity': 'show',
+          'height': 'show'
+        },
+        'dropShadows': false
+      });
+    } else {
+      $('.js-superfish').superfish('destroy');
+    }
+  }
+
+  /**
+   * modify skip links to match mobile buttons
+   */
+  function _changeSkipLink(buttons) {
+    var startLink = 'genesis-nav',
+      endLink = 'mobile-genesis-nav';
+    if ('none' === _getDisplayValue(buttons)) {
+      startLink = 'mobile-genesis-nav';
+      endLink = 'genesis-nav';
+    }
+    $('.genesis-skip-link a[href^="#' + startLink + '"]').each(function() {
+      var link = $(this).attr('href');
+      link = link.replace(startLink, endLink);
+      $(this).attr('href', link);
+    });
+  }
+
+  function _maybeClose(buttons) {
+    if ('none' !== _getDisplayValue(buttons)) {
+      return;
+    }
+    $('.menu-toggle, .sub-menu-toggle')
+      .removeClass('activated')
+      .attr('aria-expanded', false)
+      .attr('aria-pressed', false);
+    $('nav, .sub-menu')
+      .attr('style', '');
+  }
+
+  /**
+   * generic function to get the display value of an element
+   * @param  {id} $id ID to check
+   * @return {string}     CSS value of display property
+   */
+  function _getDisplayValue($id) {
+    var element = document.getElementById($id),
+      style = window.getComputedStyle(element);
+    return style.getPropertyValue('display');
+  }
+
+  /**
+   * Toggle aria attributes
+   * @param  {button} $this     passed through
+   * @param  {aria-xx} attribute aria attribute to toggle
+   * @return {bool}           from _ariaReturn
+   */
+  function _toggleAria($this, attribute) {
+    $this.attr(attribute, function(index, value) {
+      return 'false' === value;
+    });
+  }
+
+  $(document).ready(function() {
+
+    geneplate.params = typeof ShowcaseL10n === 'undefined' ? '' : ShowcaseL10n;
+
+    if (typeof geneplate.params !== 'undefined') {
+      geneplate.init();
+    }
+
+  });
+
+})(document, jQuery);

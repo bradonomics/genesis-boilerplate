@@ -1,0 +1,49 @@
+/* Buttons
+-------------------------------------------------- */
+.button,
+button,
+input[type='submit'],
+input[type='reset'],
+input[type='button'] {
+  display: inline-block;
+  height: 38px;
+  padding: 0 30px;
+  border: 1px solid $button-background-color;
+  border-radius: 4px;
+  border-color: $button-background-color;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 38px;
+  letter-spacing: 1px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: $button-text-color;
+  background-color: $button-background-color;
+  -webkit-transition: all .1s ease-in-out;
+          transition: all .1s ease-in-out;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+button,
+.button {
+  margin-bottom: 10px;
+}
+
+.button:hover,
+button:hover,
+input[type='submit']:hover,
+input[type='reset']:hover,
+input[type='button']:hover,
+.button:focus,
+button:focus,
+input[type='submit']:focus,
+input[type='reset']:focus,
+input[type='button']:focus {
+  border-color: $button-background-color-hover;
+  outline: none;
+  color: $button-text-color-hover;
+  background-color: $button-background-color-hover;
+}

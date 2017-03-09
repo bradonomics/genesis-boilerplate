@@ -2,12 +2,12 @@
 -------------------------------------------------- */
 
 .site-header {
-  background-color: #fff;
   -webkit-box-flex: 1;
   -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
   padding: 0 20px;
+  background-color: #fff;
 
   .wrap {
     padding: 0;
@@ -15,41 +15,30 @@
 
   .widget-area {
     width: 100%;
+    @media (min-width: 750px) {
+      float: right;
+      max-width: 620px;
+      text-align: right;
+    }
+    @media (min-width: 1200px) {
+      max-width: 800px;
+    }
   }
 
-}
-
-@media (min-width: 750px) {
-  .site-header .widget-area {
-    float: right;
-    text-align: right;
-    max-width: 620px;
-  }
-}
-@media (min-width: 1200px) {
-  .site-header .widget-area {
-    max-width: 800px;
-  }
 }
 
 .title-area {
   float: left;
-  padding: 10px 0;
   width: 100%;
+  padding: 10px 0;
   text-align: center;
-}
-@media (min-width: 750px) {
-  .title-area {
+  @media (min-width: 750px) {
     text-align: left;
   }
-}
-@media (min-width: 1000px) {
-  .title-area {
+  @media (min-width: 1000px) {
     padding: 10px 20px;
   }
-}
-@media (min-width: 1200px) {
-  .title-area {
+  @media (min-width: 1200px) {
     max-width: 360px;
   }
 }
@@ -64,24 +53,21 @@
   font-weight: 400;
   line-height: 1.2;
   text-align: center;
+  @media (min-width: 750px) {
+    text-align: left;
+  }
 
   a {
-    color: #333;
     text-decoration: none;
+    color: #333;
 
     &:hover {
-      color: #333;
       text-decoration: none;
+      color: #333;
     }
 
   }
 
-}
-
-@media (min-width: 750px) {
-  .site-title {
-    text-align: left;
-  }
 }
 
 .header-image .site-title {
@@ -89,10 +75,10 @@
   text-indent: -9999px;
 
   > a {
-    background: url('images/logo.png') no-repeat left;
     float: left;
-    min-height: 60px;
     width: 100%;
+    min-height: 60px;
+    background: url('images/logo.png') no-repeat left;
   }
 
 }

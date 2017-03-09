@@ -1,0 +1,33 @@
+/* Lists
+-------------------------------------------------- */
+ul {
+  list-style: disc inside;
+  -webkit-padding-start: 0;
+}
+
+ol {
+  list-style: decimal inside;
+}
+
+ol,
+ul {
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin: 15px 0 15px 30px;
+}
+
+.entry-content ol ol,
+.entry-content ul ul {
+  margin-bottom: 0;
+}
+
+
+li {
+  margin-bottom: 10px;
+}

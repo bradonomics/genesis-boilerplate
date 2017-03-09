@@ -5,45 +5,35 @@ Description: Boilerplate code for Genesis child themes.
 Author: Brad West
 Author URI: http://bradonomics.com/
 Version: 0.0.0
-
 Template: genesis
 */
 
-/* Variables
--------------------------------------------------- */
-
-$body-font: Raleway, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-
-$link-color: #1EAEDB;
-$link-color-hover: #0FA0CE;
-
-$button-text-color: #fff;
-$button-background-color: #33C3F0;
-
-$button-text-color-hover: #fff;
-$button-background-color-hover: #1EAEDB;
-
-/* Fonts
--------------------------------------------------- */
-// Use this area for self-hosted fonts
-// @import "fonts/all";
 
 /* Import partials from sass directory
 -------------------------------------------------- */
 @import
-  "normalize",
-  "base",
-  "structure",
-  "grid",
-  "header",
-  "navigation",
-  "inner",
-  "pagination",
-  "sidebars",
-  "comments",
-  "footer",
-  "custom"
+  'normalize',
+  'variables',
+  'reset',
+  'base',
+  'buttons',
+  'forms',
+  'tables',
+  'lists',
+  'structure',
+  'grid',
+  'header',
+  'headings',
+  'navigation',
+  'inner',
+  'pagination',
+  'sidebars',
+  'comments',
+  'footer-widgets',
+  'footer',
+  'custom'
 ;
+
 
 /* Media Queries
 -------------------------------------------------- */

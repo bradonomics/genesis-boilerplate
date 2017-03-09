@@ -20,13 +20,7 @@ var sassOptions = {
 
 
 /*  Setup new WordPress project type this in the terminal:
- *  1. `npm init`
- *  2. `npm install --save-dev gulp gulp-sass gulp-autoprefixer gulp-cssnano gulp-concat gulp-uglify gulp-rename browser-sync`
- */
-
-/*  Setup new PSD to HTML/CSS project type this in the terminal:
- *  `npm install --save-dev gulp gulp-sass gulp-autoprefixer gulp-cssnano browser-sync`
- *  NOTE: If you need to work on JavaScript during the PSD extraction, use the "WordPress project" setup above.
+ *  `npm init && npm install --save-dev gulp gulp-sass gulp-autoprefixer gulp-cssnano gulp-concat gulp-uglify gulp-rename browser-sync`
  */
 
 
@@ -35,7 +29,7 @@ gulp.task('css', function () {
   return gulp.src('./dev/scss/*.*')
     .pipe(sass(sassOptions).on('error', sass.logError))
     .pipe(prefix())
-    .pipe(minifycss())
+    // .pipe(minifycss())
     .pipe(gulp.dest('./'));
 });
 
@@ -76,13 +70,13 @@ gulp.task('browser-sync', function() {
 
 
 //* Browser Sync for Sass
-gulp.task('watch', ['css'], function() {
-  browserSync.init({
-    server: "./"
-  });
-  gulp.watch("./dev/scss/*.*", ['css', browserSync.reload]);
-  gulp.watch("./*.html").on('change', browserSync.reload);
-});
+// gulp.task('watch', ['css'], function() {
+//   browserSync.init({
+//     server: "./"
+//   });
+//   gulp.watch("./dev/scss/*.*", ['css', browserSync.reload]);
+//   gulp.watch("./*.html").on('change', browserSync.reload);
+// });
 
 
 // Watch Task (default)

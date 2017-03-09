@@ -1,3 +1,5 @@
+# This repo is in a broken state. DO NOT USE.
+
 # Genesis Boilerplate
 Genesis boilerplate is a starter kit for Genesis child themes. It uses the most common CSS and PHP functions I find myself using when creating new themes.
 

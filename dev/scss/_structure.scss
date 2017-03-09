@@ -5,12 +5,12 @@
   display: -ms-flexbox; /* inbetween prefixed for ie */
   display: -webkit-flex; /* new prefixed for webkit */
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
   height: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
 }
 
 .site-inner {

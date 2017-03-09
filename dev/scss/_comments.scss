@@ -33,7 +33,7 @@ p.form-submit,
 }
 
 .entry-comments .children .comment {
-	border: none;
+	border: 0;
 }
 
 .comment-respond label {
@@ -41,9 +41,9 @@ p.form-submit,
 	font-weight: 800;
 }
 
-.comment-respond input[type="email"],
-.comment-respond input[type="text"],
-.comment-respond input[type="url"] {
+.comment-respond input[type='email'],
+.comment-respond input[type='text'],
+.comment-respond input[type='url'] {
 	width: 100%;
 }
 

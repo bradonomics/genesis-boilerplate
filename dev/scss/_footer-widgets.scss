@@ -1,0 +1,74 @@
+/* Footer Widgets
+-------------------------------------------------- */
+
+.footer-widgets {
+  -webkit-box-flex: 4;
+  -webkit-flex: 4 0 auto;
+  -ms-flex: 4 0 auto;
+  flex: 4 0 auto;
+  padding-top: 40px;
+  clear: both;
+
+  .widget {
+    margin-bottom: 40px;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+}
+
+.footer-widgets-1,
+.footer-widgets-2,
+.footer-widgets-3,
+.footer-widgets-4 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+/* Two Footer Widgets --- Uncomment to Use */
+/*
+@media (min-width: 550px) {
+  .footer-widgets-1,
+  .footer-widgets-2 {
+    float: left;
+    width: 50%;
+  }
+}
+*/
+
+/* Three Footer Widgets --- Uncomment to Use */
+/*
+@media (min-width: 750px) {
+  .footer-widgets-1,
+  .footer-widgets-2,
+  .footer-widgets-3 {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+*/
+
+/* Four Footer Widgets --- Uncomment to Use */
+/*
+@media (min-width: 550px) {
+  .footer-widgets-1,
+  .footer-widgets-2,
+  .footer-widgets-3,
+  .footer-widgets-4  {
+    float: left;
+    width: 50%;
+  }
+}
+@media (min-width: 1000px) {
+  .footer-widgets-1,
+  .footer-widgets-2,
+  .footer-widgets-3,
+  .footer-widgets-4 {
+    width: 25%;
+  }
+}
+*/
